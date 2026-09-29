@@ -13,32 +13,17 @@ html,body{height:100%;overscroll-behavior:none}
 body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden;font-size:15px}
 .app{position:fixed;inset:0;display:flex;flex-direction:column;max-width:840px;margin:0 auto}
 
-/* ========== AGE GATE ========== */
-#ageGate{position:fixed;inset:0;z-index:10000;background:rgba(7,4,16,.98);backdrop-filter:blur(15px);display:flex;align-items:center;justify-content:center;padding:20px}
-#ageGate.hidden{display:none}
-.age-box{max-width:440px;width:100%;text-align:center;background:linear-gradient(180deg,#1a0e2a,#0d0618);border:1px solid rgba(225,29,110,.4);border-radius:24px;padding:30px 24px;box-shadow:0 30px 80px rgba(0,0,0,.9)}
-.age-box .age-emoji{font-size:4rem;margin-bottom:12px;animation:agePulse 2s ease-in-out infinite}
-@keyframes agePulse{50%{transform:scale(1.1);filter:drop-shadow(0 0 20px var(--accent))}}
-.age-box h1{font-size:1.6rem;font-weight:900;letter-spacing:2px;background:linear-gradient(135deg,var(--accent2),var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
-.age-box p{font-size:.85rem;color:#d8d0e8;line-height:1.7;margin-bottom:20px}
-.age-warn{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.35);border-radius:12px;padding:12px;font-size:.72rem;color:#fca5a5;line-height:1.5;margin-bottom:20px;text-align:left}
-.age-check{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:16px;cursor:pointer;text-align:left}
-.age-check input{margin-top:2px;width:18px;height:18px;accent-color:var(--accent);flex-shrink:0}
-.age-check label{font-size:.78rem;color:var(--text);cursor:pointer;line-height:1.5}
-#ageEnterBtn{width:100%;padding:16px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--purple));color:#fff;font-size:.95rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:inherit;box-shadow:0 0 30px var(--glow);transition:.2s}
-#ageEnterBtn:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
-#ageEnterBtn:not(:disabled):active{transform:scale(.97)}
-.age-exit{display:block;margin-top:14px;color:var(--muted);font-size:.72rem;text-decoration:none}
-
-/* ========== AUTH ========== */
-#authModal{position:fixed;inset:0;z-index:9999;background:rgba(7,4,16,.97);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:16px}
+/* AUTH */
+#authModal{position:fixed;inset:0;z-index:9999;background:rgba(7,4,16,.98);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
 #authModal.hidden{display:none}
-.auth-box{background:#120a1e;border:1px solid rgba(225,29,110,.4);border-radius:20px;padding:24px;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.9)}
-.auth-input{width:100%;padding:10px;background:#070410;border:1px solid var(--border);border-radius:10px;color:#fff;margin-bottom:12px;outline:none;text-align:center;font-size:1.3rem;letter-spacing:6px;font-family:inherit}
+.auth-box{background:linear-gradient(180deg,#1a0e2a,#0d0618);border:1px solid rgba(225,29,110,.4);border-radius:22px;padding:26px 22px;max-width:420px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.9);margin:auto}
+.auth-input{width:100%;padding:12px;background:#070410;border:1px solid var(--border);border-radius:10px;color:#fff;margin-bottom:10px;outline:none;text-align:center;font-size:1.4rem;letter-spacing:8px;font-family:inherit;font-weight:900}
 .auth-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+#authBtn{width:100%;padding:14px;background:var(--accent);border:none;border-radius:10px;color:#fff;font-weight:900;cursor:pointer;text-transform:uppercase;letter-spacing:1.5px;font-family:inherit;font-size:.85rem;transition:.2s}
+#authBtn:disabled{opacity:.35;cursor:not-allowed}
+#authBtn:not(:disabled):active{transform:scale(.98)}
 
-/* ========== TOPBAR ========== */
-.app{position:fixed;inset:0;display:flex;flex-direction:column;max-width:840px;margin:0 auto}
+/* TOPBAR */
 .topbar{flex-shrink:0;padding:8px 12px 6px;padding-top:calc(8px + env(safe-area-inset-top,0px));background:linear-gradient(180deg,rgba(18,10,30,.96),rgba(18,10,30,.88));border-bottom:1px solid var(--border);backdrop-filter:blur(10px);z-index:10}
 .topbar-row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .topbar-logo{font-size:.85rem;font-weight:900;letter-spacing:1.5px;background:linear-gradient(135deg,var(--accent2),var(--accent),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
@@ -47,13 +32,13 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 .topbar-live .lbl{color:var(--muted);text-transform:uppercase}
 .topbar-live .val{color:var(--gold);font-weight:800}
 
-/* ========== MAIN ========== */
+/* MAIN */
 .main{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;position:relative}
 .screen{display:none;padding:14px;padding-bottom:20px;min-height:100%}
 .screen.active{display:flex;flex-direction:column;gap:12px;animation:scrIn .35s ease}
 @keyframes scrIn{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
 
-/* ========== SETUP ========== */
+/* SETUP */
 .info-box{background:linear-gradient(135deg,rgba(225,29,110,.08),rgba(168,85,247,.04));border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:11px;padding:12px 14px;font-size:.78rem;line-height:1.55;color:#e2d8f0}
 .info-box strong{color:var(--accent2);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:3px;font-size:.62rem}
 .section-label{font-size:.6rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);font-weight:800;margin-top:4px}
@@ -68,23 +53,25 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 .pc-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(225,29,110,.15);border:1px solid rgba(225,29,110,.4);font-size:.65rem;color:var(--accent)}
 .pc-remove{width:28px;height:28px;border-radius:50%;border:1px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:var(--red);font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;transition:.2s}
 .pc-remove:disabled{opacity:.25;cursor:not-allowed}
-.pc-name{margin-bottom:10px}
-.pc-name input{width:100%;padding:12px 14px;background:#0a0518;border:1px solid var(--border);border-radius:11px;color:var(--text);font-size:.95rem;outline:none;font-family:inherit;font-weight:600}
+.pc-name input{width:100%;padding:12px 14px;background:#0a0518;border:1px solid var(--border);border-radius:11px;color:var(--text);font-size:.95rem;outline:none;font-family:inherit;font-weight:600;margin-bottom:10px}
 .pc-name input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
 .pc-gender{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-.gender-btn{padding:11px 5px;border:1px solid var(--border);background:#0a0518;color:var(--muted);font-size:.68rem;font-weight:800;border-radius:10px;cursor:pointer;font-family:inherit;transition:.2s;letter-spacing:.5px}
-.gender-btn.active[data-g="m"]{background:linear-gradient(135deg,#3b82f6,var(--purple));color:#fff;border-color:transparent;box-shadow:0 0 15px rgba(59,130,246,.35)}
-.gender-btn.active[data-g="f"]{background:linear-gradient(135deg,var(--accent),#ec4899);color:#fff;border-color:transparent;box-shadow:0 0 15px rgba(236,72,153,.35)}
-.gender-btn.active[data-g="x"]{background:linear-gradient(135deg,var(--jade),var(--accent2));color:#fff;border-color:transparent;box-shadow:0 0 15px rgba(16,185,129,.35)}
+.gender-btn{padding:11px 5px;border:1px solid var(--border);background:#0a0518;color:var(--muted);font-size:.68rem;font-weight:800;border-radius:10px;cursor:pointer;font-family:inherit;transition:.2s}
+.gender-btn.active[data-g="m"]{background:linear-gradient(135deg,#3b82f6,var(--purple));color:#fff;border-color:transparent}
+.gender-btn.active[data-g="f"]{background:linear-gradient(135deg,var(--accent),#ec4899);color:#fff;border-color:transparent}
+.gender-btn.active[data-g="x"]{background:linear-gradient(135deg,var(--jade),var(--accent2));color:#fff;border-color:transparent}
 .add-player-btn{width:100%;padding:14px;border:1.5px dashed var(--border);border-radius:14px;background:rgba(255,255,255,.02);color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:.2s}
-.add-player-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(225,29,110,.05)}
+.add-player-btn:hover{border-color:var(--accent);color:var(--accent)}
 .btn-mega{width:100%;padding:20px;border:none;border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--purple),var(--accent2));background-size:200% 200%;color:#fff;font-size:1.05rem;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:.2s;box-shadow:0 0 50px var(--glow),0 10px 30px rgba(0,0,0,.5);animation:sg 6s ease infinite;font-family:inherit;position:relative;overflow:hidden;margin-top:6px}
 .btn-mega::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:translateX(-100%);animation:shine 3s ease-in-out infinite}
 @keyframes shine{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
 @keyframes sg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 .btn-mega:active{transform:scale(.98)}
+.btn-admin{width:100%;padding:14px;border-radius:14px;border:1px solid rgba(245,158,11,.4);background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(225,29,110,.08));color:var(--accent2);font-size:.75rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:.2s;margin-top:8px}
+.btn-admin.logged{background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(245,158,11,.1));color:var(--jade);border-color:rgba(16,185,129,.4)}
+.btn-admin:active{transform:scale(.98)}
 
-/* ========== DRAW ========== */
+/* DRAW */
 #screenDraw{justify-content:center;align-items:center;text-align:center;gap:16px;padding:20px}
 .draw-title{font-size:.65rem;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:800}
 .draw-display{font-size:clamp(2.2rem,13vw,4.5rem);font-weight:900;letter-spacing:2px;background:linear-gradient(135deg,var(--accent2),var(--accent),var(--purple),var(--jade));background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:blinkText .25s linear infinite alternate,gradientMove 4s ease infinite;line-height:1.05;min-height:1.1em;text-shadow:0 0 60px rgba(225,29,110,.4);word-break:break-word;padding:0 10px}
@@ -105,7 +92,7 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 .vadi-btn .ico{display:block;font-size:1.6rem;margin-bottom:6px;line-height:1}
 .vadi-btn .sub{display:block;font-size:.55rem;letter-spacing:1.5px;font-weight:700;opacity:.85;margin-top:5px;text-transform:none}
 
-/* ========== TASK ========== */
+/* TASK */
 .task-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .task-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid var(--border);font-size:.58rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);font-family:ui-monospace,monospace}
 .task-badge.risky{border-color:var(--red);color:var(--red);background:rgba(239,68,68,.08)}
@@ -120,16 +107,13 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 @keyframes taskIn{0%{opacity:0;transform:translateY(20px) scale(.96)}100%{opacity:1;transform:translateY(0) scale(1)}}
 .task-card.risky{border-color:rgba(239,68,68,.4);background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(127,29,29,.04))}
 .task-card.safe{border-color:rgba(16,185,129,.4);background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(4,120,87,.04))}
-.task-card::before{content:'';position:absolute;top:-50%;right:-20%;width:220px;height:220px;background:radial-gradient(circle,rgba(225,29,110,.18),transparent 70%);pointer-events:none}
-.task-card.risky::before{background:radial-gradient(circle,rgba(239,68,68,.22),transparent 70%)}
-.task-card.safe::before{background:radial-gradient(circle,rgba(16,185,129,.22),transparent 70%)}
-.task-icon{font-size:3rem;text-align:center;margin-bottom:12px;line-height:1;position:relative;z-index:1}
-.task-who{text-align:center;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px;position:relative;z-index:1}
-.task-title{text-align:center;font-size:1.4rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;line-height:1.15;margin-bottom:14px;position:relative;z-index:1;background:linear-gradient(135deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.task-icon{font-size:3rem;text-align:center;margin-bottom:12px;line-height:1}
+.task-who{text-align:center;font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:6px}
+.task-title{text-align:center;font-size:1.4rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;line-height:1.15;margin-bottom:14px;background:linear-gradient(135deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .task-card.risky .task-title{background:linear-gradient(135deg,#fca5a5,var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .task-card.safe .task-title{background:linear-gradient(135deg,#6ee7b7,var(--jade));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.task-desc{font-size:.92rem;line-height:1.75;color:#d8d0e8;text-align:center;position:relative;z-index:1;padding:0 4px}
-.task-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:16px;position:relative;z-index:1}
+.task-desc{font-size:.92rem;line-height:1.75;color:#d8d0e8;text-align:center;padding:0 4px}
+.task-tags{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:16px}
 .task-tag{padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.03);border:1px solid var(--border);font-size:.55rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 .task-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
 .btn-act{padding:14px;border-radius:12px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.68rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:6px}
@@ -138,46 +122,42 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 .btn-act.primary{background:linear-gradient(135deg,var(--jade),#047857);border-color:transparent;color:#fff;box-shadow:0 0 20px rgba(16,185,129,.3)}
 .btn-act.danger{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.35);color:var(--red)}
 .btn-act.gold{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.35);color:var(--accent2)}
-.btn-act.mini{padding:8px 12px;font-size:.58rem;letter-spacing:1px;border-radius:20px}
-.btn-act:hover{border-color:var(--accent);color:#fff}
 
-/* ========== BONUS POPUP ========== */
+/* BONUS */
 #bonusPopup{position:fixed;inset:0;z-index:9500;background:rgba(7,4,16,.98);display:none;align-items:center;justify-content:center;padding:20px;animation:bonusIn .4s cubic-bezier(.2,.9,.3,1)}
 #bonusPopup.open{display:flex}
 @keyframes bonusIn{0%{opacity:0;transform:scale(.9)}100%{opacity:1;transform:scale(1)}}
-.bonus-box{max-width:500px;width:100%;text-align:center;background:linear-gradient(180deg,#2a0510,#10020a);border:2px solid var(--red);border-radius:24px;padding:26px 20px;position:relative;overflow:hidden;box-shadow:0 0 80px rgba(239,68,68,.5),0 30px 80px rgba(0,0,0,.9);animation:bonusShake 5s ease-in-out infinite}
-@keyframes bonusShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.bonus-box{max-width:500px;width:100%;text-align:center;background:linear-gradient(180deg,#2a0510,#10020a);border:2px solid var(--red);border-radius:24px;padding:26px 20px;position:relative;overflow:hidden;box-shadow:0 0 80px rgba(239,68,68,.5),0 30px 80px rgba(0,0,0,.9)}
 .bonus-box::before{content:'';position:absolute;inset:-50%;background:conic-gradient(from 0deg,transparent,rgba(239,68,68,.3),transparent,rgba(245,158,11,.3),transparent);animation:bonusSpin 6s linear infinite;pointer-events:none}
 @keyframes bonusSpin{100%{transform:rotate(360deg)}}
 .bonus-inner{position:relative;z-index:1}
 .bonus-emoji{font-size:4rem;margin-bottom:8px;animation:bombPulse .6s ease-in-out infinite alternate;display:inline-block;filter:drop-shadow(0 0 30px var(--red))}
 @keyframes bombPulse{0%{transform:scale(1) rotate(-5deg)}100%{transform:scale(1.15) rotate(5deg)}}
-.bonus-label{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent2);font-weight:900;margin-bottom:8px;animation:lp 1s ease-in-out infinite}
-.bonus-title{font-size:1.5rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;line-height:1.15;margin-bottom:14px;background:linear-gradient(135deg,#fca5a5,var(--red),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(239,68,68,.5))}
-.bonus-desc{font-size:.92rem;line-height:1.7;color:#f0e6ff;margin-bottom:16px;position:relative;z-index:1}
-.bonus-players{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:16px;position:relative;z-index:1}
+.bonus-label{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--accent2);font-weight:900;margin-bottom:8px}
+.bonus-title{font-size:1.5rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;line-height:1.15;margin-bottom:14px;background:linear-gradient(135deg,#fca5a5,var(--red),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.bonus-desc{font-size:.92rem;line-height:1.7;color:#f0e6ff;margin-bottom:16px}
+.bonus-players{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:16px}
 .bonus-player{padding:6px 12px;background:rgba(239,68,68,.15);border:1px solid var(--red);border-radius:20px;font-size:.68rem;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:1px}
-.bonus-countdown{font-size:3.5rem;font-weight:900;font-family:ui-monospace,monospace;color:#fff;letter-spacing:4px;margin:10px 0 6px;text-shadow:0 0 40px var(--red),0 0 80px var(--accent2);animation:countPulse 1s ease-in-out infinite}
+.bonus-countdown{font-size:3.5rem;font-weight:900;font-family:ui-monospace,monospace;color:#fff;letter-spacing:4px;margin:10px 0 6px;text-shadow:0 0 40px var(--red),0 0 80px var(--accent2)}
+.bonus-countdown.danger{animation:countPulse .3s ease-in-out infinite;text-shadow:0 0 40px var(--red),0 0 80px var(--red)}
 @keyframes countPulse{50%{transform:scale(1.08)}}
-.bonus-countdown.danger{color:#fff;animation:countPulse .3s ease-in-out infinite;text-shadow:0 0 40px var(--red),0 0 80px var(--red)}
-.bonus-timer-bar{width:100%;height:8px;background:rgba(255,255,255,.08);border-radius:20px;overflow:hidden;margin-bottom:18px;position:relative;z-index:1}
+.bonus-timer-bar{width:100%;height:8px;background:rgba(255,255,255,.08);border-radius:20px;overflow:hidden;margin-bottom:18px}
 .bonus-timer-fill{height:100%;background:linear-gradient(90deg,var(--accent2),var(--red));border-radius:20px;transition:width 1s linear;box-shadow:0 0 20px var(--red)}
-.bonus-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,#dc2626,#7f1d1d);color:#fff;font-size:.95rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:inherit;box-shadow:0 0 30px rgba(239,68,68,.5);transition:.2s;position:relative;z-index:1}
+.bonus-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,#dc2626,#7f1d1d);color:#fff;font-size:.95rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:inherit;box-shadow:0 0 30px rgba(239,68,68,.5);transition:.2s}
 .bonus-btn:active{transform:scale(.97)}
-.bonus-btn.done{background:linear-gradient(135deg,var(--jade),#047857);box-shadow:0 0 30px rgba(16,185,129,.5)}
 
-/* ========== MODALS ========== */
+/* MODALS */
 .modal{position:fixed;inset:0;z-index:9998;background:rgba(7,4,16,.85);backdrop-filter:blur(8px);display:none;align-items:flex-end;justify-content:center;padding:0}
 .modal.open{display:flex;animation:modalIn .25s ease}
 @keyframes modalIn{0%{opacity:0}100%{opacity:1}}
-.modal-sheet{background:linear-gradient(180deg,var(--card2),var(--card));border-top-left-radius:22px;border-top-right-radius:22px;border:1px solid var(--border);border-bottom:none;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px));width:100%;max-width:840px;max-height:88vh;overflow-y:auto;animation:sheetIn .3s cubic-bezier(.2,.9,.3,1)}
+.modal-sheet{background:linear-gradient(180deg,var(--card2),var(--card));border-top-left-radius:22px;border-top-right-radius:22px;border:1px solid var(--border);border-bottom:none;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px));width:100%;max-width:840px;max-height:90vh;overflow-y:auto;animation:sheetIn .3s cubic-bezier(.2,.9,.3,1)}
 @keyframes sheetIn{0%{transform:translateY(100%)}100%{transform:translateY(0)}}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .modal-head h2{font-size:.95rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;background:linear-gradient(135deg,var(--accent2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .modal-close{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit}
 .setting-group{margin-bottom:16px}
 .setting-group > label{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);margin-bottom:8px;font-weight:700}
-.setting-input{width:100%;padding:11px;background:#0a0518;border:1px solid var(--border);border-radius:9px;color:var(--text);font-size:.85rem;outline:none;font-family:ui-monospace,monospace;font-weight:700;text-align:center}
+.setting-input{width:100%;padding:11px;background:#0a0518;border:1px solid var(--border);border-radius:9px;color:var(--text);font-size:.85rem;outline:none;font-family:inherit;font-weight:700;text-align:center}
 .setting-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
 .setting-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .toggle-row{display:flex;justify-content:space-between;align-items:center;padding:12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:9px;margin-bottom:8px}
@@ -190,9 +170,6 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 .switch.on::after{left:22px;background:var(--jade);box-shadow:0 0 8px var(--jade)}
 .btn-danger{width:100%;padding:12px;border-radius:9px;border:1px solid rgba(239,68,68,.4);background:rgba(239,68,68,.08);color:var(--red);font-size:.7rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:.2s}
 .btn-danger:active{transform:scale(.98);background:rgba(239,68,68,.15)}
-.btn-admin{width:100%;padding:14px;border-radius:12px;border:1px solid rgba(245,158,11,.4);background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(225,29,110,.08));color:var(--accent2);font-size:.75rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px}
-.btn-admin.logged{background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(245,158,11,.1));color:var(--jade);border-color:rgba(16,185,129,.4)}
-.btn-admin:active{transform:scale(.98)}
 .stats-box{padding:12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:9px;font-family:ui-monospace,monospace;font-size:.65rem;color:var(--muted);line-height:1.8}
 .stats-box .num{color:var(--accent2);font-weight:800}
 .stats-box .num2{color:var(--jade);font-weight:800}
@@ -202,7 +179,7 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 .h-item .who{color:var(--gold);font-weight:800}
 .h-item .what{text-align:right;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-/* ========== ADMIN PANEL ========== */
+/* ADMIN */
 .admin-tabs{display:flex;gap:4px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px;scrollbar-width:none}
 .admin-tabs::-webkit-scrollbar{display:none}
 .admin-tab{flex-shrink:0;padding:9px 14px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.02);color:var(--muted);font-size:.62rem;font-weight:800;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:.2s;white-space:nowrap}
@@ -211,18 +188,18 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 .admin-pane.active{display:block}
 .admin-help{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.3);border-radius:9px;padding:10px 12px;font-size:.65rem;color:#93c5fd;line-height:1.6;margin-bottom:10px}
 .admin-help code{background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;font-size:.62rem;color:var(--accent2);font-family:ui-monospace,monospace}
+.admin-info{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);border-radius:9px;padding:10px 12px;font-size:.65rem;color:#6ee7b7;line-height:1.6;margin-bottom:10px}
+.admin-info.warn{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.3);color:#fcd34d}
 .admin-textarea{width:100%;min-height:200px;padding:12px;background:#0a0518;border:1px solid var(--border);border-radius:9px;color:var(--text);font-size:.72rem;outline:none;font-family:ui-monospace,monospace;line-height:1.7;resize:vertical;margin-bottom:8px}
 .admin-textarea:focus{border-color:var(--accent2);box-shadow:0 0 0 3px rgba(245,158,11,.15)}
 .admin-count{font-size:.6rem;color:var(--muted);font-family:ui-monospace,monospace;margin-bottom:8px;letter-spacing:1px}
 .admin-count b{color:var(--jade);font-weight:800}
 .admin-save{width:100%;padding:13px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--accent2),#d97706);color:#000;font-size:.75rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:.2s;box-shadow:0 0 25px rgba(245,158,11,.3)}
-.admin-save:active{transform:scale(.98)}
 .admin-save.secondary{background:linear-gradient(135deg,var(--jade),#047857);color:#fff;box-shadow:0 0 25px rgba(16,185,129,.3);margin-top:6px}
-.admin-info{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);border-radius:9px;padding:10px 12px;font-size:.65rem;color:#6ee7b7;line-height:1.6;margin-bottom:10px}
-.admin-info.warn{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.3);color:#fcd34d}
+.admin-save:active{transform:scale(.98)}
 
-/* ========== BOTTOM NAV ========== */
-.navbar{flex-shrink:0;display:grid;grid-template-columns:repeat(3,1fr);background:linear-gradient(0deg,rgba(18,10,30,.98),rgba(18,10,30,.9));border-top:1px solid var(--border);padding:5px 6px calc(5px + env(safe-area-inset-bottom,0px));backdrop-filter:blur(12px);z-index:10}
+/* NAVBAR 4 cols */
+.navbar{flex-shrink:0;display:grid;grid-template-columns:repeat(4,1fr);background:linear-gradient(0deg,rgba(18,10,30,.98),rgba(18,10,30,.9));border-top:1px solid var(--border);padding:5px 6px calc(5px + env(safe-area-inset-bottom,0px));backdrop-filter:blur(12px);z-index:10}
 .nav-btn{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;background:transparent;border:none;color:var(--muted);font-size:.55rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;transition:.25s;border-radius:9px;font-family:inherit}
 .nav-btn .ico{font-size:1rem;line-height:1}
 .nav-btn.active{color:#fff;background:linear-gradient(135deg,rgba(225,29,110,.18),rgba(168,85,247,.12));box-shadow:0 0 16px rgba(225,29,110,.22)}
@@ -236,7 +213,7 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 #toast.jade{border-color:var(--jade);color:var(--jade)}
 #toast.red{border-color:var(--red);color:var(--red)}
 
-/* TREST BTN (malý, top-right) */
+/* TREST FLOATING BTN */
 #trestBtn{position:fixed;top:calc(60px + env(safe-area-inset-top,0px));right:12px;z-index:9000;padding:8px 14px;border-radius:20px;border:1px solid rgba(239,68,68,.5);background:rgba(239,68,68,.15);backdrop-filter:blur(8px);color:#fff;font-size:.62rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-family:inherit;box-shadow:0 0 20px rgba(239,68,68,.3);display:none;animation:trestPulse 2s ease-in-out infinite}
 #trestBtn.show{display:block}
 @keyframes trestPulse{50%{box-shadow:0 0 30px rgba(239,68,68,.6)}}
@@ -252,33 +229,22 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 </head>
 <body>
 
-<!-- ========== AGE GATE ========== -->
-<div id="ageGate">
-  <div class="age-box">
-    <div class="age-emoji">🔞</div>
-    <h1>Vstupné overenie</h1>
-    <p>Táto aplikácia obsahuje erotický obsah určený <b>výhradne osobám starším ako 18 rokov</b>.</p>
-    <div class="age-warn">
-      <b>⚠️ Právne upozornenie:</b> Vstupom potvrdzujete, že ste plnoletý/á podľa zákonov vašej krajiny. Obsah je určený len pre osobné použitie v súkromí. Nezdieľajte s maloletými.
-    </div>
-    <div class="age-check" id="ageCheckBox">
-      <input type="checkbox" id="ageConfirm">
-      <label for="ageConfirm">Mám 18 rokov alebo viac a súhlasím s podmienkami použitia.</label>
-    </div>
-    <button id="ageEnterBtn" disabled>Vstúpiť</button>
-    <a class="age-exit" href="https://www.google.com" onclick="return confirm('Odchádzate z aplikácie. Pokračovať?')">✕ Nemám 18 · Odísť</a>
-  </div>
-</div>
-
-<!-- ========== AUTH ========== -->
-<div id="authModal" class="hidden">
+<!-- ========== AUTH + AGE ========== -->
+<div id="authModal">
   <div class="auth-box">
-    <div style="font-size:2.5rem;margin-bottom:8px">🔐</div>
-    <h2 style="color:var(--accent);font-size:1.3rem;margin-bottom:6px">Vstupné overenie</h2>
-    <p style="color:var(--muted);font-size:.8rem;margin-bottom:16px">Zadajte štvorciferné heslo.</p>
-    <input type="password" id="authPass" maxlength="4" inputmode="numeric" autocomplete="off" placeholder="••••" class="auth-input">
-    <button id="authBtn" style="width:100%;padding:11px;background:var(--accent);border:none;border-radius:10px;color:#fff;font-weight:bold;cursor:pointer;text-transform:uppercase;letter-spacing:1px;font-family:inherit">Vstúpiť</button>
-    <div id="authErr" style="color:#ef4444;font-size:.75rem;margin-top:8px;display:none">Nesprávne heslo.</div>
+    <div style="font-size:3rem;margin-bottom:10px">🔞</div>
+    <h2 style="color:var(--accent);font-size:1.35rem;margin-bottom:10px;font-weight:900;letter-spacing:1px">Vstupné overenie 18+</h2>
+    <p style="color:var(--muted);font-size:.78rem;margin-bottom:14px;line-height:1.6">Táto aplikácia obsahuje erotický obsah určený len osobám starším ako 18 rokov.</p>
+    <div style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);border-radius:10px;padding:10px 12px;font-size:.68rem;color:#fca5a5;line-height:1.5;margin-bottom:14px;text-align:left">
+      <b>⚠️ Upozornenie:</b> Obsah je určený len pre plnoleté osoby v súkromí.
+    </div>
+    <input type="password" id="authPass" maxlength="4" inputmode="numeric" autocomplete="off" placeholder="Heslo" class="auth-input">
+    <div style="display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:14px;text-align:left">
+      <input type="checkbox" id="authAge" style="margin-top:2px;width:18px;height:18px;accent-color:var(--accent);flex-shrink:0">
+      <label for="authAge" style="font-size:.75rem;color:var(--text);cursor:pointer;line-height:1.5">Mám 18 rokov alebo viac a súhlasím s podmienkami použitia.</label>
+    </div>
+    <button id="authBtn" disabled>Vstúpiť</button>
+    <div id="authErr" style="color:#ef4444;font-size:.75rem;margin-top:10px;display:none">Nesprávne heslo alebo nepotvrdený vek.</div>
   </div>
 </div>
 
@@ -287,32 +253,31 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 
   <div class="topbar">
     <div class="topbar-row">
-      <div class="topbar-logo" id="topLogo">🎲 VADÍ / NEVADÍ</div>
+      <div class="topbar-logo">🎲 VADÍ / NEVADÍ</div>
       <div class="topbar-live">
         <div class="lb"><span class="lbl">Kolo</span><span class="val" id="lbRound">0</span></div>
         <div class="lb"><span class="lbl">Fáza</span><span class="val" id="lbPhase">—</span></div>
-        <div class="lb"><span class="lbl">Celkový čas</span><span class="val" id="lbTotalTime">00:00</span></div>
+        <div class="lb"><span class="lbl">Čas</span><span class="val" id="lbTotalTime">00:00</span></div>
       </div>
     </div>
   </div>
 
   <div class="main" id="mainScroll">
 
-    <!-- ========== SETUP ========== -->
+    <!-- SETUP -->
     <div class="screen active" id="screenSetup">
       <div class="info-box">
         <strong>🎲 Vadí / Nevadí · Erotická hra pre 2+ hráčov</strong>
-        <p>Pridajte hráčov s menom a polaritou. Hra náhodne vyberie kto ide na radu — vy klikáte <b>VADÍ</b> (jemné) alebo <b>NEVADÍ</b> (drsné). Prvých <b id="setupPrelimCount">10</b> kôl je predohra, potom <b>naplno</b>, po ďalších <b id="setupExtraCount">15</b> kolách sa prepne na <b>extra naplno</b>.</p>
+        <p>Pridajte hráčov s menom a polaritou. Hra náhodne vyberie kto ide na radu — vy klikáte <b>VADÍ</b> (jemné) alebo <b>NEVADÍ</b> (drsné). Prvých <b id="setupPrelimCount">10</b> kôl je predohra, potom <b>naplno</b>, po <b id="setupExtraCount">15</b> kolách <b>extra naplno</b>.</p>
       </div>
-
       <div class="section-label">👥 HRÁČI</div>
       <div class="players-list" id="playersList"></div>
       <button class="add-player-btn" id="addPlayerBtn">+ Pridať hráča</button>
-
       <button class="btn-mega" id="startBtn">🎲 ŠTART · ZAČAŤ HRU</button>
+      <button class="btn-admin" id="adminBtnSetup">🔐 ADMIN PANEL</button>
     </div>
 
-    <!-- ========== DRAW ========== -->
+    <!-- DRAW -->
     <div class="screen" id="screenDraw">
       <div class="draw-round" id="drawRound">KOLO 1</div>
       <div class="draw-phase" id="drawPhase">PREDOHRA</div>
@@ -331,7 +296,7 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
       </div>
     </div>
 
-    <!-- ========== TASK ========== -->
+    <!-- TASK -->
     <div class="screen" id="screenTask">
       <div class="task-head">
         <div class="task-badge" id="taskBadge"><span class="dot"></span><span id="taskBadgeText">ÚLOHA</span></div>
@@ -359,13 +324,14 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
     <button class="nav-btn active" data-scr="setup"><span class="ico">👥</span><span>Hráči</span></button>
     <button class="nav-btn" data-scr="draw"><span class="ico">🎲</span><span>Hra</span></button>
     <button class="nav-btn" data-scr="settings"><span class="ico">⚙️</span><span>Nast.</span></button>
+    <button class="nav-btn" data-scr="admin"><span class="ico">🔐</span><span>Admin</span></button>
   </div>
 </div>
 
-<!-- TREST BTN -->
+<!-- TREST FLOATING -->
 <button id="trestBtn">⚡ TREST</button>
 
-<!-- ========== BONUS POPUP ========== -->
+<!-- BONUS POPUP -->
 <div id="bonusPopup">
   <div class="bonus-box">
     <div class="bonus-inner">
@@ -381,87 +347,49 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
   </div>
 </div>
 
-<!-- ========== SETTINGS MODAL ========== -->
+<!-- SETTINGS MODAL -->
 <div class="modal" id="modalSettings">
   <div class="modal-sheet">
     <div class="modal-head"><h2>⚙️ Nastavenia</h2><button class="modal-close" data-close="modalSettings">✕</button></div>
-
     <div class="setting-group">
       <label>Dĺžka fáz (kôl)</label>
       <div class="setting-row">
-        <div><div style="font-size:.55rem;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px">Predohra</div><input type="number" class="setting-input" id="setPrelim" min="0" max="100" value="10"></div>
-        <div><div style="font-size:.55rem;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px">Naplno</div><input type="number" class="setting-input" id="setFull" min="0" max="100" value="15"></div>
+        <div><div style="font-size:.55rem;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;text-align:center">Predohra</div><input type="number" class="setting-input" id="setPrelim" min="0" max="100"></div>
+        <div><div style="font-size:.55rem;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;text-align:center">Naplno</div><input type="number" class="setting-input" id="setFull" min="0" max="100"></div>
       </div>
     </div>
-
-    <div class="setting-group">
-      <label>Časomiera úlohy (sekundy) · 0 = vypnutá</label>
-      <input type="number" class="setting-input" id="setTimer" min="0" max="3600" value="0">
-    </div>
-
-    <div class="setting-group">
-      <label>Rýchlosť žrebovania (ms)</label>
-      <input type="number" class="setting-input" id="setDrawSpeed" min="30" max="500" value="100">
-    </div>
-
-    <div class="setting-group">
-      <label>Bonus · šanca (0-100 %)</label>
-      <input type="number" class="setting-input" id="setBonusChance" min="0" max="100" value="15">
-    </div>
-
+    <div class="setting-group"><label>Časomiera úlohy (sekundy) · 0 = OFF</label><input type="number" class="setting-input" id="setTimer" min="0" max="3600"></div>
+    <div class="setting-group"><label>Rýchlosť žrebovania (ms)</label><input type="number" class="setting-input" id="setDrawSpeed" min="30" max="500"></div>
+    <div class="setting-group"><label>Bonus šanca (0-100 %)</label><input type="number" class="setting-input" id="setBonusChance" min="0" max="100"></div>
     <div class="setting-group">
       <label>Možnosti</label>
       <div class="toggle-row"><div class="toggle-row-label"><span class="t">🔊 Zvuk</span><span class="s">Tik pri žrebovaní</span></div><div class="switch on" id="swSound"></div></div>
       <div class="toggle-row"><div class="toggle-row-label"><span class="t">📳 Vibrácie</span><span class="s">Haptická odozva</span></div><div class="switch on" id="swVibe"></div></div>
-      <div class="toggle-row"><div class="toggle-row-label"><span class="t">🚫 Bez opakovania</span><span class="s">Úlohy sa nebudú opakovať</span></div><div class="switch on" id="swNoRepeat"></div></div>
-      <div class="toggle-row"><div class="toggle-row-label"><span class="t">💣 Bonus hry</span><span class="s">Občas vyskočí bonus výzva</span></div><div class="switch on" id="swBonus"></div></div>
+      <div class="toggle-row"><div class="toggle-row-label"><span class="t">🚫 Bez opakovania</span><span class="s">Úlohy sa neopakujú</span></div><div class="switch on" id="swNoRepeat"></div></div>
+      <div class="toggle-row"><div class="toggle-row-label"><span class="t">💣 Bonus hry</span><span class="s">Občas vyskočí bonus</span></div><div class="switch on" id="swBonus"></div></div>
     </div>
-
-    <div class="setting-group">
-      <label>🔐 Administrácia</label>
-      <button class="btn-admin" id="adminBtn">🔐 Prihlásiť sa ako admin</button>
-    </div>
-
-    <div class="setting-group">
-      <label>📊 Štatistika</label>
-      <div class="stats-box" id="statsBox">Zatiaľ nič</div>
-    </div>
-
-    <div class="setting-group">
-      <label>História</label>
-      <button class="btn-act" id="historyBtn2" style="width:100%">📜 Zobraziť históriu</button>
-    </div>
-
-    <div class="setting-group">
-      <label>⚠️ Reset</label>
-      <button class="btn-danger" id="resetBtn">🗑 Vymazať históriu a videné úlohy</button>
-    </div>
+    <div class="setting-group"><label>📊 Štatistika</label><div class="stats-box" id="statsBox">—</div></div>
+    <div class="setting-group"><label>História</label><button class="btn-act" id="historyBtn2" style="width:100%">📜 Zobraziť históriu</button></div>
+    <div class="setting-group"><label>⚠️ Reset</label><button class="btn-danger" id="resetBtn">🗑 Vymazať históriu a videné úlohy</button></div>
   </div>
 </div>
 
-<!-- ========== ADMIN LOGIN MODAL ========== -->
+<!-- ADMIN LOGIN MODAL -->
 <div class="modal" id="modalAdminLogin">
   <div class="modal-sheet">
     <div class="modal-head"><h2>🔐 Admin login</h2><button class="modal-close" data-close="modalAdminLogin">✕</button></div>
-    <div class="setting-group">
-      <label>Heslo</label>
-      <input type="password" class="setting-input" id="adminPass" placeholder="admin heslo" autocomplete="off">
-    </div>
-    <button class="btn-admin" id="adminLoginBtn">🔓 Prihlásiť</button>
+    <div class="admin-info">Zadaj admin heslo pre vstup do editora úloh, bonusov a trestov.</div>
+    <div class="setting-group"><label>Heslo</label><input type="password" class="setting-input" id="adminPass" placeholder="admin heslo" autocomplete="off"></div>
+    <button class="admin-save" id="adminLoginBtn">🔓 Prihlásiť sa</button>
     <div id="adminErr" style="color:#ef4444;font-size:.72rem;margin-top:10px;text-align:center;display:none">Nesprávne heslo.</div>
   </div>
 </div>
 
-<!-- ========== ADMIN PANEL MODAL ========== -->
+<!-- ADMIN PANEL MODAL -->
 <div class="modal" id="modalAdminPanel">
-  <div class="modal-sheet" style="max-height:92vh">
+  <div class="modal-sheet">
     <div class="modal-head"><h2>⚙️ Admin panel</h2><button class="modal-close" data-close="modalAdminPanel">✕</button></div>
-
-    <div class="admin-info">
-      <b>✓ Prihlásený ako admin</b><br>
-      Môžeš pridávať / upravovať úlohy pre všetky 6 bánk, bonus hry a tresty. Všetko sa ukladá do localStorage a prežije reload.
-    </div>
-
+    <div class="admin-info"><b>✓ Prihlásený ako admin</b><br>Editor úloh, bonusov a trestov. Všetko sa ukladá do localStorage.</div>
     <div class="admin-tabs" id="adminTabs">
       <button class="admin-tab active" data-pane="pane_jemne_predohra">🌸 Jemné · Predohra</button>
       <button class="admin-tab" data-pane="pane_jemne_naplno">🌸 Jemné · Naplno</button>
@@ -472,85 +400,68 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
       <button class="admin-tab" data-pane="pane_bonus">💣 Bonus</button>
       <button class="admin-tab" data-pane="pane_tresty">⚡ Tresty</button>
     </div>
-
     <div class="admin-help">
       <b>Formát riadku:</b> <code>Názov | Popis | emoji | minHráči | tag1,tag2</code><br>
-      <b>Príklad:</b> <code>Pusa na krk | Pomaly pobozkaj partnera na krk 30s. | 💋 | 2 | bozk,krk</code><br>
-      <b>minHráči:</b> 2 = pre dvoch, 3 = pre troch a viac, 4 = pre štyroch a viac, 0 = pre všetkých.<br>
-      Každý riadok = jedna úloha. Prázdne riadky sa ignorujú.
+      <b>Príklad:</b> <code>Pusa na krk | Pobozkaj 30s. | 💋 | 2 | bozk,krk</code><br>
+      <b>minHráči:</b> 2 = pre dvoch, 3 = pre troch+, 4 = pre štyroch+, 0 = pre všetkých.
     </div>
-
-    <!-- 6 TASK BANKS -->
     <div class="admin-pane active" id="pane_jemne_predohra">
-      <label style="font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:6px">🌸 Jemné · Predohra</label>
       <textarea class="admin-textarea" id="ta_jemne_predohra"></textarea>
       <div class="admin-count">Aktuálne: <b id="cnt_jemne_predohra">0</b> úloh</div>
       <button class="admin-save" data-save="jemne_predohra">💾 Uložiť</button>
-      <button class="admin-save secondary" data-reset="jemne_predohra">↺ Obnoviť pôvodné</button>
+      <button class="admin-save secondary" data-reset="jemne_predohra">↺ Obnoviť</button>
     </div>
     <div class="admin-pane" id="pane_jemne_naplno">
-      <label style="font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:6px">🌸 Jemné · Naplno</label>
       <textarea class="admin-textarea" id="ta_jemne_naplno"></textarea>
       <div class="admin-count">Aktuálne: <b id="cnt_jemne_naplno">0</b> úloh</div>
       <button class="admin-save" data-save="jemne_naplno">💾 Uložiť</button>
-      <button class="admin-save secondary" data-reset="jemne_naplno">↺ Obnoviť pôvodné</button>
+      <button class="admin-save secondary" data-reset="jemne_naplno">↺ Obnoviť</button>
     </div>
     <div class="admin-pane" id="pane_jemne_extra">
-      <label style="font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:6px">🌸 Jemné · Extra</label>
       <textarea class="admin-textarea" id="ta_jemne_extra"></textarea>
       <div class="admin-count">Aktuálne: <b id="cnt_jemne_extra">0</b> úloh</div>
       <button class="admin-save" data-save="jemne_extra">💾 Uložiť</button>
-      <button class="admin-save secondary" data-reset="jemne_extra">↺ Obnoviť pôvodné</button>
+      <button class="admin-save secondary" data-reset="jemne_extra">↺ Obnoviť</button>
     </div>
     <div class="admin-pane" id="pane_drsne_predohra">
-      <label style="font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:6px">🔥 Drsné · Predohra</label>
       <textarea class="admin-textarea" id="ta_drsne_predohra"></textarea>
       <div class="admin-count">Aktuálne: <b id="cnt_drsne_predohra">0</b> úloh</div>
       <button class="admin-save" data-save="drsne_predohra">💾 Uložiť</button>
-      <button class="admin-save secondary" data-reset="drsne_predohra">↺ Obnoviť pôvodné</button>
+      <button class="admin-save secondary" data-reset="drsne_predohra">↺ Obnoviť</button>
     </div>
     <div class="admin-pane" id="pane_drsne_naplno">
-      <label style="font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:6px">🔥 Drsné · Naplno</label>
       <textarea class="admin-textarea" id="ta_drsne_naplno"></textarea>
       <div class="admin-count">Aktuálne: <b id="cnt_drsne_naplno">0</b> úloh</div>
       <button class="admin-save" data-save="drsne_naplno">💾 Uložiť</button>
-      <button class="admin-save secondary" data-reset="drsne_naplno">↺ Obnoviť pôvodné</button>
+      <button class="admin-save secondary" data-reset="drsne_naplno">↺ Obnoviť</button>
     </div>
     <div class="admin-pane" id="pane_drsne_extra">
-      <label style="font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:6px">🔥 Drsné · Extra</label>
       <textarea class="admin-textarea" id="ta_drsne_extra"></textarea>
       <div class="admin-count">Aktuálne: <b id="cnt_drsne_extra">0</b> úloh</div>
       <button class="admin-save" data-save="drsne_extra">💾 Uložiť</button>
-      <button class="admin-save secondary" data-reset="drsne_extra">↺ Obnoviť pôvodné</button>
+      <button class="admin-save secondary" data-reset="drsne_extra">↺ Obnoviť</button>
     </div>
-
-    <!-- BONUS -->
     <div class="admin-pane" id="pane_bonus">
-      <div class="admin-info warn">💣 Bonus = nečakaná mini-hra ktorá vyskočí náhodne. Hráč/i musia splniť za daný čas, inak trest. Formát: <b>Názov | Popis | emoji | čas_v_sekundách | hráči(one/two/all/random)</b></div>
-      <label style="font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:6px">💣 Bonus hry</label>
-      <textarea class="admin-textarea" id="ta_bonus" placeholder="Príklad:&#10;Rýchlovka | Musíte sa vyzliecť do spodného prádla za 60 sekúnd! | 💣 | 60 | all&#10;Streľba | Kto prvý sa dotkne zadku druhého, vyhral! | 🎯 | 30 | two"></textarea>
+      <div class="admin-info warn">Formát: <b>Názov | Popis | emoji | čas_sekundy | hráči</b><br>hráči: <code>one</code> = 1 hráč, <code>two</code> = 2 hráči, <code>all</code> = všetci, <code>random</code> = 1 náhodný</div>
+      <textarea class="admin-textarea" id="ta_bonus"></textarea>
       <div class="admin-count">Aktuálne: <b id="cnt_bonus">0</b> bonusov</div>
       <button class="admin-save" data-save="bonus">💾 Uložiť</button>
-      <button class="admin-save secondary" data-reset="bonus">↺ Obnoviť pôvodné</button>
+      <button class="admin-save secondary" data-reset="bonus">↺ Obnoviť</button>
     </div>
-
-    <!-- TRESTY -->
     <div class="admin-pane" id="pane_tresty">
-      <div class="admin-info warn">⚡ Trest = priradí sa hráčovi keď nesplní úlohu / bonus. Formát: <b>Názov | Popis | emoji</b></div>
-      <label style="font-size:.6rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700;display:block;margin-bottom:6px">⚡ Tresty</label>
+      <div class="admin-info warn">Formát: <b>Názov | Popis | emoji</b></div>
       <textarea class="admin-textarea" id="ta_tresty"></textarea>
       <div class="admin-count">Aktuálne: <b id="cnt_tresty">0</b> trestov</div>
       <button class="admin-save" data-save="tresty">💾 Uložiť</button>
-      <button class="admin-save secondary" data-reset="tresty">↺ Obnoviť pôvodné</button>
+      <button class="admin-save secondary" data-reset="tresty">↺ Obnoviť</button>
     </div>
-
     <div class="setting-group" style="margin-top:20px">
       <button class="btn-danger" id="adminLogout">🔒 Odhlásiť admin</button>
     </div>
   </div>
 </div>
 
-<!-- ========== HISTORY MODAL ========== -->
+<!-- HISTORY MODAL -->
 <div class="modal" id="modalHistory">
   <div class="modal-sheet">
     <div class="modal-head"><h2>📜 História</h2><button class="modal-close" data-close="modalHistory">✕</button></div>
@@ -558,10 +469,10 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
   </div>
 </div>
 
-<!-- ========== TREST SELECT MODAL ========== -->
+<!-- TREST SELECT MODAL -->
 <div class="modal" id="modalTrest">
   <div class="modal-sheet">
-    <div class="modal-head"><h2>⚡ Udelíš trest</h2><button class="modal-close" data-close="modalTrest">✕</button></div>
+    <div class="modal-head"><h2>⚡ Udeliť trest</h2><button class="modal-close" data-close="modalTrest">✕</button></div>
     <div class="setting-group">
       <label>Komu</label>
       <select class="setting-input" id="trestWho"></select>
@@ -581,155 +492,137 @@ body{background:radial-gradient(ellipse at top,#1a0a2e 0%,#070410 60%),#070410;c
 
 var $ = function(id){ return document.getElementById(id); };
 var AUTH_KEY = 'vadi_v3_auth';
-var ADMIN_KEY = 'vadi_v3_admin_auth';
-var AGE_KEY = 'vadi_v3_age';
+var ADMIN_KEY = 'vadi_v3_admin';
 var ADMIN_PASS = 'admin0007';
-
-/* ============================================================
-   CUSTOM DATA — načítané z localStorage alebo default
-============================================================ */
 var LS_CUSTOM = 'vadi_v3_custom';
 
 /* ============================================================
-   DEFAULT TASK BANKS — { t, d, i, minPlayers, tags }
+   DEFAULT BANKS
 ============================================================ */
-
 var DEFAULT_jemne_predohra = [
-  {t:'Dlhý pohľad',d:'Pozerajte si do očí 60 sekúnd. Bez slov, bez dotyku. Kto sa prvý zasmeje, dostane trest.',i:'👀',minPlayers:2,tags:['oči','ticho']},
+  {t:'Dlhý pohľad',d:'Pozerajte si do očí 60 sekúnd. Bez slov, bez dotyku. Kto sa prvý zasmeje, dostane trest.',i:'👀',minPlayers:2,tags:['oči']},
   {t:'Bozk na krk',d:'Pomaly pobozkaj partnera na krk — presne 30 sekúnd. Potom sa vymeňte.',i:'💋',minPlayers:2,tags:['bozk']},
   {t:'Masáž rúk',d:'Vezmi ruky partnera do svojich a masíruj ich 2 minúty. Potom výmena.',i:'🤲',minPlayers:2,tags:['masáž']},
   {t:'Šepkaj kompliment',d:'Pošepkaj partnerovi do ucha 3 veci, ktoré na ňom obdivuješ.',i:'💬',minPlayers:2,tags:['kompliment']},
-  {t:'Objatie 60 sekúnd',d:'Objímte sa tak silno, že cítite tep toho druhého. 60 sekúnd bez pohnutia.',i:'🫂',minPlayers:2,tags:['objatie']},
+  {t:'Objatie 60s',d:'Objímte sa tak silno, že cítite tep toho druhého. 60 sekúnd bez pohnutia.',i:'🫂',minPlayers:2,tags:['objatie']},
   {t:'Čelo na čelo',d:'Polož svoje čelo na čelo partnera. Zatvorte oči. Dýchajte spolu 1 minútu.',i:'🧘',minPlayers:2,tags:['dýchanie']},
   {t:'Pusa na ruku',d:'Zober partnerovu ruku a pobozkaj každý prst zvlášť. Pomaly.',i:'✋',minPlayers:2,tags:['bozk']},
-  {t:'Ticho pri tele',d:'Posaďte sa chrbtom k sebe, dotýkajte sa len lopatkami. 2 minúty ticha.',i:'🤫',minPlayers:2,tags:['ticho']},
-  {t:'Dotyky tváre',d:'Zavri oči. Nechaj partnera, aby sa dotýkal tvojej tváre 1 minútu. Potom výmena.',i:'😌',minPlayers:2,tags:['tvár']},
-  {t:'Sladký bozk',d:'Pobozkaj partnera 10 sekúnd. Bez jazyka. Len pery na perách.',i:'💗',minPlayers:2,tags:['bozk']},
+  {t:'Ticho pri tele',d:'Posaďte sa chrbtom k sebe. 2 minúty ticha.',i:'🤫',minPlayers:2,tags:['ticho']},
+  {t:'Dotyky tváre',d:'Zavri oči. Nechaj partnera, aby sa dotýkal tvojej tváre 1 minútu.',i:'😌',minPlayers:2,tags:['tvár']},
+  {t:'Sladký bozk',d:'Pobozkaj partnera 10 sekúnd. Bez jazyka.',i:'💗',minPlayers:2,tags:['bozk']},
   {t:'Masáž ramien',d:'Postav sa za partnera a masíruj mu ramená 2 minúty.',i:'💆',minPlayers:2,tags:['masáž']},
   {t:'Srdce na srdce',d:'Ľahni si na partnera hrudník. Počúvaj tep. 2 minúty.',i:'💞',minPlayers:2,tags:['srdce']},
   {t:'Kompliment o tele',d:'Povedz partnerovi 3 veci, ktoré sa ti páčia na jeho tele.',i:'💬',minPlayers:2,tags:['kompliment']},
-  {t:'Len dotyk ruky',d:'Držte sa za ruky 3 minúty bez slov. Len tak.',i:'🤝',minPlayers:2,tags:['ticho']},
   {t:'Bozk na čelo',d:'Pobozkaj partnera na čelo. Jemne, ako by si ho chránil.',i:'😇',minPlayers:2,tags:['bozk']},
-  {t:'Skupinové objatie',d:'Všetci sa objímte do jedného kruhu. 60 sekúnd ticha.',i:'🫂',minPlayers:3,tags:['skupina','objatie']},
+  {t:'Skupinové objatie',d:'Všetci sa objímte do jedného kruhu. 60 sekúnd ticha.',i:'🫂',minPlayers:3,tags:['skupina']},
   {t:'Kruh dôvery',d:'Postavte sa do kruhu. Každý povie jednému po pravici niečo pekné.',i:'💫',minPlayers:3,tags:['skupina']},
-  {t:'Masáž podľa hodín',d:'Každý masíruje toho po pravici 60 sekúnd. Potom posun.',i:'💆',minPlayers:3,tags:['skupina','masáž']},
-  {t:'Kompliment každému',d:'Povedz každému hráčovi jeden kompliment. Rýchlo, bez rozmýšľania.',i:'💬',minPlayers:3,tags:['skupina']}
+  {t:'Masáž podľa hodín',d:'Každý masíruje toho po pravici 60 sekúnd. Potom posun.',i:'💆',minPlayers:3,tags:['skupina']}
 ];
 
 var DEFAULT_jemne_naplno = [
-  {t:'Pomalý bozk',d:'Bozkajte sa 2 minúty bez použitia rúk. Len pery a jazyk.',i:'💋',minPlayers:2,tags:['bozk']},
-  {t:'Masáž chrbta',d:'Lež na bruchu. Partner ti masíruje chrbát 5 minút. Potom výmena.',i:'💆',minPlayers:2,tags:['masáž']},
-  {t:'Telo na tele',d:'Ľahnite si na seba (oblečení). Ostatní tak 3 minúty bez pohybu.',i:'🫂',minPlayers:2,tags:['telo']},
-  {t:'Bozky po tele',d:'Partner ti dá 10 bozkov kamkoľvek od krku po brucho. Ty určíš kam.',i:'💗',minPlayers:2,tags:['bozk']},
-  {t:'Len dýchanie',d:'Spojte sa v objatí. Dýchajte spolu 4-4-4-4 5 minút.',i:'🧘',minPlayers:2,tags:['tantra']},
+  {t:'Pomalý bozk',d:'Bozkajte sa 2 minúty bez použitia rúk.',i:'💋',minPlayers:2,tags:['bozk']},
+  {t:'Masáž chrbta',d:'Lež na bruchu. Partner ti masíruje chrbát 5 minút.',i:'💆',minPlayers:2,tags:['masáž']},
+  {t:'Telo na tele',d:'Ľahnite si na seba (oblečení). 3 minúty bez pohybu.',i:'🫂',minPlayers:2,tags:['telo']},
+  {t:'Bozky po tele',d:'Partner ti dá 10 bozkov od krku po brucho.',i:'💗',minPlayers:2,tags:['bozk']},
+  {t:'Len dýchanie',d:'Dýchajte spolu 4-4-4-4 5 minút.',i:'🧘',minPlayers:2,tags:['tantra']},
   {t:'Sviečky',d:'Zahas svetlá a zapáľ sviečky. Milujte sa v ich svetle 10 minút.',i:'🕯️',minPlayers:2,tags:['atmosféra']},
-  {t:'Olej',d:'Vezmi olej a masíruj partnerovi celé telo 5 minút. Potom výmena.',i:'💧',minPlayers:2,tags:['olej']},
-  {t:'Zaviazané oči',d:'Zaväz oči partnerovi. Dotýkaj sa ho 3 minúty rôznymi spôsobmi.',i:'🖐️',minPlayers:2,tags:['zaviazané']},
+  {t:'Olej',d:'Masíruj partnerovi celé telo 5 minút.',i:'💧',minPlayers:2,tags:['olej']},
+  {t:'Zaviazané oči',d:'Zaväz oči partnerovi. Dotýkaj sa ho 3 minúty.',i:'🖐️',minPlayers:2,tags:['zaviazané']},
   {t:'Kúpeľ',d:'Spoločná kúpeľ — horúca voda, soľ, sviečky. 20 minút.',i:'🛁',minPlayers:2,tags:['kúpeľ']},
-  {t:'Zrkadlo',d:'Postavte sa pred zrkadlo. Dotýkajte sa jeden druhého pred ním 3 minúty.',i:'🪞',minPlayers:2,tags:['zrkadlo']},
-  {t:'Tanec',d:'Pustite si pomalú hudbu. Tancujte pri sebe 5 minút.',i:'💃',minPlayers:2,tags:['tanec']},
+  {t:'Zrkadlo',d:'Postavte sa pred zrkadlo. Dotýkajte sa 3 minúty.',i:'🪞',minPlayers:2,tags:['zrkadlo']},
+  {t:'Tanec',d:'Pustite si pomalú hudbu. Tancujte 5 minút.',i:'💃',minPlayers:2,tags:['tanec']},
   {t:'Studené a teplé',d:'Prejdite sa po tele s kockou ľadu a potom s teplými ústami.',i:'🧊',minPlayers:2,tags:['ľad']},
-  {t:'Perie',d:'Použi pero alebo hodváb. Dotýkaj sa partnera 3 minúty bez rúk.',i:'🪶',minPlayers:2,tags:['perie']},
-  {t:'Trojitá masáž',d:'Dvaja masírujú jedného — chrbát a nohy. 5 minút. Potom výmena.',i:'💆',minPlayers:3,tags:['skupina','masáž']},
-  {t:'Spoločná kúpeľ',d:'Všetci do kúpeľa/vane. 20 minút relax.',i:'🛁',minPlayers:3,tags:['skupina']},
-  {t:'Slepá dôvera',d:'Všetci zavreté oči. Dotýkajte sa len rukami, 3 minúty.',i:'🤫',minPlayers:3,tags:['skupina']}
+  {t:'Perie',d:'Použi pero alebo hodváb. Dotýkaj sa 3 minúty.',i:'🪶',minPlayers:2,tags:['perie']},
+  {t:'Trojitá masáž',d:'Dvaja masírujú jedného — chrbát a nohy. 5 minút.',i:'💆',minPlayers:3,tags:['skupina']},
+  {t:'Spoločná kúpeľ',d:'Všetci do kúpeľa. 20 minút relax.',i:'🛁',minPlayers:3,tags:['skupina']}
 ];
 
 var DEFAULT_jemne_extra = [
-  {t:'Hodina lásky',d:'60 minút bez orgazmu. Len spojenie, dýchanie, oči. Extrémna tantrická praxis.',i:'🧘',minPlayers:2,tags:['60 min','tantra']},
-  {t:'Kúpeľ a potom',d:'45 minút spoločnej kúpele, potom sa milujte bez osušenia.',i:'🛁',minPlayers:2,tags:['kúpeľ']},
+  {t:'Hodina lásky',d:'60 minút bez orgazmu. Len spojenie, dýchanie, oči.',i:'🧘',minPlayers:2,tags:['60 min']},
+  {t:'Kúpeľ a potom',d:'45 minút spoločnej kúpele, potom milovanie bez osušenia.',i:'🛁',minPlayers:2,tags:['kúpeľ']},
   {t:'Zrkadlo naplno',d:'30 minút milovania pred veľkým zrkadlom. Musíte sa pozerať.',i:'🪞',minPlayers:2,tags:['zrkadlo']},
-  {t:'Dlhý pomalý sex',d:'45 minút. Žiadny orgazmus prvých 30 minút. Len pomalé milovanie.',i:'💗',minPlayers:2,tags:['dlhé']},
-  {t:'Posvätná seansa',d:'2 hodiny tantrického milovania s dýchaním 4-4-4-4.',i:'🕯️',minPlayers:2,tags:['2h','tantra']},
-  {t:'Skupinová tantra',d:'60 minút tantrického milovania v skupine. Len pomalé pohyby.',i:'🧘',minPlayers:3,tags:['skupina','tantra']}
+  {t:'Dlhý pomalý sex',d:'45 minút. Žiadny orgazmus prvých 30 minút.',i:'💗',minPlayers:2,tags:['dlhé']},
+  {t:'Posvätná seansa',d:'2 hodiny tantrického milovania s dýchaním 4-4-4-4.',i:'🕯️',minPlayers:2,tags:['2h']},
+  {t:'Skupinová tantra',d:'60 minút tantrického milovania v skupine.',i:'🧘',minPlayers:3,tags:['skupina']}
 ];
 
 var DEFAULT_drsne_predohra = [
-  {t:'Odhaľ jedno',d:'Sundaj si jeden kus oblečenia. Nechaj si ho na sebe 5 minút.',i:'👕',minPlayers:2,tags:['odhalenie']},
-  {t:'Zvodný pohľad',d:'Pozeraj sa partnerovi 30 sekúnd tak zvodne, ako vieš. Nesmieš sa smiať.',i:'😏',minPlayers:2,tags:['pohľad']},
-  {t:'Bozk na vnútro stehna',d:'Pobozkaj partnera na vnútornú stranu stehna. Pomaly. Zastav sa 5 cm pred rozkrokom.',i:'💋',minPlayers:2,tags:['stehná']},
-  {t:'Šepkaj zvodne',d:'Šepkaj partnerovi 30 sekúnd, čo mu chceš urobiť. Drsne, konkrétne.',i:'🔊',minPlayers:2,tags:['šepot']},
-  {t:'Ukáž čo máš',d:'Vyzleč si vrchnú časť. 2 minúty musíš byť takto pred partnerom.',i:'🔥',minPlayers:2,tags:['odhalenie']},
+  {t:'Odhaľ jedno',d:'Sundaj si jeden kus oblečenia. Nechaj 5 minút.',i:'👕',minPlayers:2,tags:['odhalenie']},
+  {t:'Zvodný pohľad',d:'Pozeraj sa 30 sekúnd tak zvodne, ako vieš.',i:'😏',minPlayers:2,tags:['pohľad']},
+  {t:'Bozk na vnútro stehna',d:'Pobozkaj vnútornú stranu stehna. Pomaly. Zastav 5 cm pred rozkrokom.',i:'💋',minPlayers:2,tags:['stehná']},
+  {t:'Šepkaj zvodne',d:'Šepkaj 30 sekúnd, čo mu chceš urobiť. Drsne.',i:'🔊',minPlayers:2,tags:['šepot']},
+  {t:'Ukáž čo máš',d:'Vyzleč si vrchnú časť. 2 minúty takto.',i:'🔥',minPlayers:2,tags:['odhalenie']},
   {t:'Zvodné zvuky',d:'Rob zvodné zvuky 30 sekúnd. Bez dotyku.',i:'🎵',minPlayers:2,tags:['zvuky']},
-  {t:'Zviaž ruky',d:'Nechaj partnera, aby ti zviazal ruky. 3 minúty musíš byť takto.',i:'🔗',minPlayers:2,tags:['zviazané']},
-  {t:'Vodítko',d:'Vezmi partnera za ruku a veď ho po miestnosti 2 minúty. Sebe-zavreté oči.',i:'🖐️',minPlayers:2,tags:['vedenie']},
-  {t:'Ukáž sa',d:'Postav sa pred partnera a pomaly sa otoč. 3×. Bez rečí.',i:'💃',minPlayers:2,tags:['prehliadka']},
-  {t:'Zvodný tanec',d:'Zatancuj partnerovi zvodný tanec 60 sekúnd. Bez hudby.',i:'💃',minPlayers:2,tags:['tanec']},
+  {t:'Zviaž ruky',d:'Nechaj sa zviazať. 3 minúty takto.',i:'🔗',minPlayers:2,tags:['zviazané']},
+  {t:'Vodítko',d:'Veď partnera po miestnosti 2 minúty. Sebe-zavreté oči.',i:'🖐️',minPlayers:2,tags:['vedenie']},
+  {t:'Ukáž sa',d:'Postav sa pred partnera a pomaly sa otoč. 3×.',i:'💃',minPlayers:2,tags:['prehliadka']},
+  {t:'Zvodný tanec',d:'Zatancuj zvodný tanec 60 sekúnd.',i:'💃',minPlayers:2,tags:['tanec']},
   {t:'Ukáž spodok',d:'Ukáž partnerovi spodnú bielizeň. Nechaj ho pozerať 1 minútu.',i:'👙',minPlayers:2,tags:['odhalenie']},
-  {t:'Ruky pod oblečenie',d:'Daj ruky partnerovi pod tričko. Nechaj ich tam 1 minútu. Bez pohnutia.',i:'🖐️',minPlayers:2,tags:['dotyk']},
+  {t:'Ruky pod oblečenie',d:'Daj ruky pod tričko. 1 minútu bez pohnutia.',i:'🖐️',minPlayers:2,tags:['dotyk']},
   {t:'Predvádzanie',d:'Všetci si vyzlečú po jednom kuse oblečenia. 3 minúty.',i:'🔥',minPlayers:3,tags:['skupina']},
-  {t:'Kruh zvádzania',d:'Každý šepká tomu po pravici 30 sekúnd, čo by mu urobil.',i:'🔊',minPlayers:3,tags:['skupina']},
-  {t:'Skupinové zvádzanie',d:'Každý sa snaží zviesť ostatných 60 sekúnd. Bez dotyku.',i:'😏',minPlayers:3,tags:['skupina']}
+  {t:'Kruh zvádzania',d:'Každý šepká po pravici 30 sekúnd, čo by mu urobil.',i:'🔊',minPlayers:3,tags:['skupina']}
 ];
 
 var DEFAULT_drsne_naplno = [
   {t:'Pusa na rozkrok',d:'Pobozkaj partnera cez oblečenie na rozkrok. 30 sekúnd.',i:'💋',minPlayers:2,tags:['intímne']},
   {t:'Zviazané oči',d:'Zaväz partnerovi oči. Rob s ním čo chceš 5 minút.',i:'🖐️',minPlayers:2,tags:['zaviazané']},
-  {t:'Orálna predohra',d:'Daj partnerovi orálnu predohru. 3 minúty. On sa nesmie pohnúť.',i:'🔥',minPlayers:2,tags:['orál']},
-  {t:'Odhalenie naplno',d:'Vyzleč sa úplne. 5 minút musíš byť nahý/nahá pred partnerom.',i:'🔥',minPlayers:2,tags:['nahota']},
+  {t:'Orálna predohra',d:'Daj partnerovi orálnu predohru. 3 minúty.',i:'🔥',minPlayers:2,tags:['orál']},
+  {t:'Odhalenie naplno',d:'Vyzleč sa úplne. 5 minút.',i:'🔥',minPlayers:2,tags:['nahota']},
   {t:'69',d:'Zaujmite polohu 69. 5 minút.',i:'💥',minPlayers:2,tags:['poloha']},
   {t:'Ruky v akcii',d:'Rukami uspokoj partnera. 3 minúty. Bez preniknutia.',i:'✋',minPlayers:2,tags:['ruky']},
-  {t:'Hra s ľadom',d:'Vezmi kocku ľadu a prejdi s ňou partnerovi po tele od krku po rozkrok.',i:'🧊',minPlayers:2,tags:['ľad']},
-  {t:'Zrkadlo naplno',d:'Postavte sa pred zrkadlom. Milujte sa 10 minút. Musíte sa pozerať.',i:'🪞',minPlayers:2,tags:['zrkadlo']},
-  {t:'Zviazaný/á',d:'Nechaj sa zviazať. Partner robí s tebou čo chce 10 minút.',i:'🔗',minPlayers:2,tags:['zviazané']},
-  {t:'Dominancia',d:'Buď dominantný/á 5 minút. Partner musí poslúchať.',i:'👑',minPlayers:2,tags:['dominancia']},
-  {t:'Slúženie',d:'Kľakni si pred partnera. Urob mu 3 veci, ktoré si vyžiada.',i:'🙇',minPlayers:2,tags:['slúženie']},
-  {t:'Predohra ústami',d:'Rob partnerovi predohru ústami 5 minút. Zastav sa pred vyvrcholením.',i:'💋',minPlayers:2,tags:['orál']},
-  {t:'Milovanie v tme',d:'Milujte sa v absolútnej tme 15 minút. Bez svetla.',i:'🌑',minPlayers:2,tags:['tma']},
-  {t:'V sede',d:'Milujte sa v sede, oproti sebe. Čelom k sebe. 10 minút.',i:'🪑',minPlayers:2,tags:['poloha']},
-  {t:'Zozadu',d:'Milujte sa zozadu. 10 minút. Bez prestania.',i:'🐎',minPlayers:2,tags:['poloha']},
-  {t:'Nehybne',d:'Spojte sa a zostaňte nehybní 5 minút. Len dýchajte.',i:'🧘',minPlayers:2,tags:['tantra']},
-  {t:'Orál naplno',d:'Orálna hra až do vyvrcholenia. Vyber si komu to urobíš.',i:'💥',minPlayers:2,tags:['orál']},
-  {t:'Bez rúk',d:'Uspokojte sa len ústami a telom. Žiadne ruky. 10 minút.',i:'🚫',minPlayers:2,tags:['bez rúk']},
-  {t:'Rýchlovka',d:'Rýchlovka kdekoľvek v dome okrem spálne. 5 minút.',i:'⚡',minPlayers:2,tags:['rýchlovka']},
-  {t:'Pred zrkadlom naplno',d:'Milujte sa pred zrkadlom odzadu. 10 minút. Musíte sa pozerať.',i:'🪞',minPlayers:2,tags:['zrkadlo']},
-  {t:'Trojka - jeden vedie',d:'Jeden vedie, dvaja sa podriaďujú. 15 minút.',i:'👑',minPlayers:3,tags:['skupina','trojka']},
-  {t:'Kruh orálu',d:'Každý na každom. 15 minút. Bez preniknutia.',i:'💥',minPlayers:3,tags:['skupina','orál']},
-  {t:'Reťaz',d:'Jeden za druhým. Kruh, kým jeden nevyvrcholí.',i:'⛓️',minPlayers:3,tags:['skupina']},
-  {t:'Štafeta',d:'Každý 5 minút. Vystriedať sa. Žiadne prestávky.',i:'🏃',minPlayers:3,tags:['skupina']}
+  {t:'Hra s ľadom',d:'Prejdi kockou ľadu od krku po rozkrok.',i:'🧊',minPlayers:2,tags:['ľad']},
+  {t:'Zrkadlo naplno',d:'Pred zrkadlom. Milujte sa 10 minút. Pozerajte sa.',i:'🪞',minPlayers:2,tags:['zrkadlo']},
+  {t:'Zviazaný/á',d:'Nechaj sa zviazať. Partner robí 10 minút čo chce.',i:'🔗',minPlayers:2,tags:['zviazané']},
+  {t:'Dominancia',d:'Buď dominantný 5 minút. Partner poslúcha.',i:'👑',minPlayers:2,tags:['dominancia']},
+  {t:'Slúženie',d:'Kľakni si pred partnera. Urob 3 veci, ktoré si vyžiada.',i:'🙇',minPlayers:2,tags:['slúženie']},
+  {t:'Predohra ústami',d:'Orál 5 minút. Zastav sa pred vyvrcholením.',i:'💋',minPlayers:2,tags:['orál']},
+  {t:'Milovanie v tme',d:'Milujte sa v absolútnej tme 15 minút.',i:'🌑',minPlayers:2,tags:['tma']},
+  {t:'V sede',d:'V sede, čelom k sebe. 10 minút.',i:'🪑',minPlayers:2,tags:['poloha']},
+  {t:'Zozadu',d:'Milujte sa zozadu. 10 minút.',i:'🐎',minPlayers:2,tags:['poloha']},
+  {t:'Nehybne',d:'Spojte sa a zostaňte nehybní 5 minút.',i:'🧘',minPlayers:2,tags:['tantra']},
+  {t:'Orál naplno',d:'Orál až do vyvrcholenia. Vyber komu.',i:'💥',minPlayers:2,tags:['orál']},
+  {t:'Bez rúk',d:'Uspokojte len ústami a telom. 10 minút.',i:'🚫',minPlayers:2,tags:['bez rúk']},
+  {t:'Rýchlovka',d:'Rýchlovka kdekoľvek mimo spálne. 5 minút.',i:'⚡',minPlayers:2,tags:['rýchlovka']},
+  {t:'Trojka - jeden vedie',d:'Jeden vedie, dvaja sa podriaďujú. 15 minút.',i:'👑',minPlayers:3,tags:['trojka']},
+  {t:'Kruh orálu',d:'Každý na každom. 15 minút.',i:'💥',minPlayers:3,tags:['skupina']},
+  {t:'Reťaz',d:'Jeden za druhým. Kruh.',i:'⛓️',minPlayers:3,tags:['skupina']}
 ];
 
 var DEFAULT_drsne_extra = [
-  {t:'Tantrická seansa',d:'90 minút bez orgazmu. Len spojenie, dýchanie, oči.',i:'🧘',minPlayers:2,tags:['90 min','tantra']},
-  {t:'Hra moci',d:'Jeden je pán, druhý sluha. 30 minút. Potom výmena.',i:'👑',minPlayers:2,tags:['hra moci']},
-  {t:'Úplná tma',d:'Milujte sa v absolútnej tme 20 minút. Bez svetla, bez slov.',i:'🌑',minPlayers:2,tags:['tma']},
-  {t:'Mimo domu',d:'Milujte sa na balkóne / v kúpeľni / v kuchyni. 10 minút.',i:'🌃',minPlayers:2,tags:['miesto']},
-  {t:'Masturbácia pred sebou',d:'Masturbuj pred partnerom 3 minúty. On sa len pozerá.',i:'👀',minPlayers:2,tags:['masturbácia']},
-  {t:'Pomôcky',d:'Použite akúkoľvek pomôcku, ktorú máte poruke. 15 minút.',i:'🎁',minPlayers:2,tags:['pomôcky']},
-  {t:'Dlhý maratón',d:'2 hodiny milovania. Bez prestania. Bez podmienok.',i:'⏳',minPlayers:2,tags:['2h','maratón']},
-  {t:'Extrémna tantra',d:'3 hodiny tantrického milovania s dýchaním a meditáciou.',i:'🧘',minPlayers:2,tags:['3h','tantra']},
-  {t:'Skupinová hra moci',d:'Jeden pán, ostatní sluhovia. 45 minút.',i:'👑',minPlayers:3,tags:['skupina','moc']},
-  {t:'Maratón troch',d:'90 minút milovania v trojici. Bez prestávky.',i:'⏳',minPlayers:3,tags:['skupina','maratón']}
+  {t:'Tantrická seansa',d:'90 minút bez orgazmu. Spojenie, dýchanie, oči.',i:'🧘',minPlayers:2,tags:['90 min']},
+  {t:'Hra moci',d:'Jeden pán, druhý sluha. 30 minút.',i:'👑',minPlayers:2,tags:['hra moci']},
+  {t:'Úplná tma',d:'Milujte sa v absolútnej tme 20 minút.',i:'🌑',minPlayers:2,tags:['tma']},
+  {t:'Mimo domu',d:'Milujte sa na balkóne/kúpeľni/kuchyni. 10 minút.',i:'🌃',minPlayers:2,tags:['miesto']},
+  {t:'Masturbácia',d:'Masturbuj pred partnerom 3 minúty.',i:'👀',minPlayers:2,tags:['masturbácia']},
+  {t:'Pomôcky',d:'Použite akúkoľvek pomôcku. 15 minút.',i:'🎁',minPlayers:2,tags:['pomôcky']},
+  {t:'Maratón',d:'2 hodiny milovania bez prestania.',i:'⏳',minPlayers:2,tags:['2h']},
+  {t:'Extrémna tantra',d:'3 hodiny tantrického milovania.',i:'🧘',minPlayers:2,tags:['3h']},
+  {t:'Skupinová hra moci',d:'Jeden pán, ostatní sluhovia. 45 minút.',i:'👑',minPlayers:3,tags:['skupina']},
+  {t:'Maratón troch',d:'90 minút milovania v trojici.',i:'⏳',minPlayers:3,tags:['skupina']}
 ];
 
-/* ============================================================
-   BONUS & TRESTY — default
-============================================================ */
 var DEFAULT_bonus = [
-  {t:'BOMBA · Vyzleč sa!',d:'Do 60 sekúnd musíš byť úplne nahý/nahá! Ak nestihneš, čaká ťa trest!',i:'💣',time:60,players:'one'},
-  {t:'Streľba zadkov',d:'Kto prvý chytí zadok druhého, vyhráva. 30 sekúnd!',i:'🎯',time:30,players:'all'},
+  {t:'BOMBA · Vyzleč sa!',d:'Do 60 sekúnd musíš byť úplne nahý! Ak nestihneš, trest!',i:'💣',time:60,players:'one'},
+  {t:'Streľba zadkov',d:'Kto prvý chytí zadok druhého? 30 sekúnd!',i:'🎯',time:30,players:'all'},
   {t:'Rýchlovka v tme',d:'Všetci do tmy! Musíte sa nájsť a dotknúť do 90 sekúnd.',i:'🌑',time:90,players:'all'},
-  {t:'Zvodná póza',d:'Zaujmi najzvodnejšiu pózu akú vieš. 20 sekúnd. Ostatní hodnotia.',i:'💃',time:20,players:'one'},
-  {t:'Kto skôr',d:'Kto prvý povie „chcem ťa“ — vyhráva. Ostatní dostanú trest.',i:'💬',time:15,players:'all'},
-  {t:'Dvojité zvádzanie',d:'Dvaja vybraní musia zvádzať tretieho. 60 sekúnd.',i:'😏',time:60,players:'two'}
+  {t:'Zvodná póza',d:'Zaujmi najzvodnejšiu pózu. 20 sekúnd.',i:'💃',time:20,players:'one'},
+  {t:'Kto skôr',d:'Kto prvý povie „chcem ťa“ — vyhráva. 15 sekúnd.',i:'💬',time:15,players:'all'},
+  {t:'Dvojité zvádzanie',d:'Dvaja vybraní zvádzajú tretieho. 60 sekúnd.',i:'😏',time:60,players:'two'}
 ];
 
 var DEFAULT_tresty = [
   {t:'Vyzleč sa!',d:'Musíš si vyzliecť dva kusy oblečenia.',i:'👕'},
   {t:'Kľak si a slúž',d:'Kľakni si pred ostatných a rob im 3 minúty čo povedia.',i:'🙇'},
-  {t:'Bozk na nohu',d:'Pobozkaj nohu každého hráča. Od chodidla po koleno.',i:'🦶'},
-  {t:'Zviazaný 5 minút',d:'Nechaj sa zviazať na 5 minút. Ruky za chrbtom.',i:'🔗'},
-  {t:'Zvodný tanec',d:'Zatancuj zvodný tanec 60 sekúnd. Bez hudby.',i:'💃'},
+  {t:'Bozk na nohu',d:'Pobozkaj nohu každého hráča.',i:'🦶'},
+  {t:'Zviazaný 5 minút',d:'Nechaj sa zviazať na 5 minút.',i:'🔗'},
+  {t:'Zvodný tanec',d:'Zatancuj zvodný tanec 60 sekúnd.',i:'💃'},
   {t:'Bez rúk 3 minúty',d:'3 minúty sa nesmieš dotknúť nikoho rukami.',i:'🚫'},
   {t:'Masáž všetkým',d:'Masíruj každému hráčovi chodidlá 2 minúty.',i:'💆'},
-  {t:'Krič „chcem viac!“',d:'3× musíš zakričať „chcem viac!“ tak hlasno ako vieš.',i:'📣'},
+  {t:'Krič „chcem viac!“',d:'3× zakrič „chcem viac!“ tak hlasno ako vieš.',i:'📣'},
   {t:'Pusa na stehno',d:'Pobozkaj vnútornú stranu stehna jedného hráča.',i:'💋'},
   {t:'Priznanie',d:'Povedz jednu vec, ktorú by si chcel s tými hráčmi urobiť.',i:'💬'}
 ];
 
-/* ============================================================
-   LOAD / SAVE CUSTOM
-============================================================ */
 function getDefaults(){
   return {
     jemne_predohra: DEFAULT_jemne_predohra,
@@ -743,79 +636,29 @@ function getDefaults(){
   };
 }
 
+/* ============================================================
+   LS
+============================================================ */
+function lsGet(k,d){ try{ var v = localStorage.getItem(k); return v===null?d:JSON.parse(v); }catch(e){ return d; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
+
 var CUSTOM = {};
 function loadCustom(){
   var d = getDefaults();
   var stored = lsGet(LS_CUSTOM, null);
   if(stored){
-    // Použi uložené, ak existujú, inak default
     Object.keys(d).forEach(function(k){
       if(stored[k] && Array.isArray(stored[k]) && stored[k].length > 0){
         CUSTOM[k] = stored[k];
       } else {
-        CUSTOM[k] = d[k];
+        CUSTOM[k] = JSON.parse(JSON.stringify(d[k]));
       }
     });
   } else {
     CUSTOM = JSON.parse(JSON.stringify(d));
   }
 }
-function saveCustom(){
-  lsSet(LS_CUSTOM, CUSTOM);
-}
-
-/* ============================================================
-   PARSE / FORMAT pre admin editor
-============================================================ */
-function tasksToText(bank, isBonus){
-  return bank.map(function(t){
-    if(isBonus){
-      return [t.t, t.d, t.i, t.time, t.players].join(' | ');
-    }
-    if(t === CUSTOM.tresty || bank === CUSTOM.tresty || bank._isTresty){
-      return [t.t, t.d, t.i].join(' | ');
-    }
-    return [t.t, t.d, t.i, t.minPlayers || 2, (t.tags || []).join(',')].join(' | ');
-  }).join('\n');
-}
-function tasksFromText(text, bankKey){
-  var lines = text.split('\n');
-  var out = [];
-  var isBonus = bankKey === 'bonus';
-  var isTresty = bankKey === 'tresty';
-  lines.forEach(function(line){
-    line = line.trim();
-    if(!line) return;
-    var parts = line.split('|').map(function(s){ return s.trim(); });
-    if(isBonus){
-      if(parts.length < 4) return;
-      out.push({
-        t: parts[0] || 'Bonus',
-        d: parts[1] || '',
-        i: parts[2] || '💣',
-        time: parseInt(parts[3], 10) || 60,
-        players: parts[4] || 'one'
-      });
-    } else if(isTresty){
-      if(parts.length < 3) return;
-      out.push({
-        t: parts[0] || 'Trest',
-        d: parts[1] || '',
-        i: parts[2] || '⚡'
-      });
-    } else {
-      if(parts.length < 3) return;
-      out.push({
-        t: parts[0] || 'Úloha',
-        d: parts[1] || '',
-        i: parts[2] || '🎲',
-        minPlayers: parseInt(parts[3], 10) || 2,
-        tags: (parts[4] || '').split(',').map(function(s){ return s.trim(); }).filter(Boolean)
-      });
-    }
-  });
-  return out;
-}
+function saveCustom(){ lsSet(LS_CUSTOM, CUSTOM); }
 
 /* ============================================================
    STATE
@@ -846,14 +689,9 @@ var ST = {
   totalTimeInterval: null,
   bonusTimeLeft: 0,
   bonusInterval: null,
-  bonusCurrent: null
+  bonusCurrent: null,
+  bonusPlayers: []
 };
-
-/* ============================================================
-   LS HELPERS
-============================================================ */
-function lsGet(k,d){ try{ var v = localStorage.getItem(k); return v===null?d:JSON.parse(v); }catch(e){ return d; } }
-function lsSet(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
 
 function loadSettings(){
   var s = lsGet('vadi_v3_settings', null);
@@ -873,15 +711,10 @@ function loadSettings(){
 }
 function saveSettings(){
   lsSet('vadi_v3_settings', {
-    prelimRounds: ST.prelimRounds,
-    fullRounds: ST.fullRounds,
-    timerSeconds: ST.timerSeconds,
-    drawSpeed: ST.drawSpeed,
-    bonusChance: ST.bonusChance,
-    sound: ST.sound,
-    vibe: ST.vibe,
-    noRepeat: ST.noRepeat,
-    bonusEnabled: ST.bonusEnabled
+    prelimRounds: ST.prelimRounds, fullRounds: ST.fullRounds,
+    timerSeconds: ST.timerSeconds, drawSpeed: ST.drawSpeed,
+    bonusChance: ST.bonusChance, sound: ST.sound, vibe: ST.vibe,
+    noRepeat: ST.noRepeat, bonusEnabled: ST.bonusEnabled
   });
 }
 function saveSeen(){ lsSet('vadi_v3_seen', ST.seen); }
@@ -900,7 +733,7 @@ function toast(msg, type){
 }
 
 /* ============================================================
-   AUDIO + VIBE
+   AUDIO
 ============================================================ */
 var audioCtx = null;
 function initAudio(){
@@ -912,8 +745,7 @@ function beep(freq, type, dur, vol){
   try{
     initAudio();
     if(!audioCtx) return;
-    var o = audioCtx.createOscillator();
-    var g = audioCtx.createGain();
+    var o = audioCtx.createOscillator(), g = audioCtx.createGain();
     o.type = type;
     o.frequency.setValueAtTime(freq, audioCtx.currentTime);
     g.gain.setValueAtTime(vol || 0.08, audioCtx.currentTime);
@@ -930,13 +762,24 @@ function sBonus(){ beep(300,'square',0.1); setTimeout(function(){beep(400,'squar
 function vibe(p){ if(!ST.vibe) return; if(navigator.vibrate){ try{ navigator.vibrate(p); }catch(e){} } }
 
 /* ============================================================
-   AUTH
+   AUTH + AGE (combined)
 ============================================================ */
-function isAuthed(){ try{ var a=JSON.parse(localStorage.getItem(AUTH_KEY)||'null'); if(!a) return false; return (Date.now()-a.t)<30*24*60*60*1000; }catch(e){ return false; } }
+function isAuthed(){
+  try{ var a=JSON.parse(localStorage.getItem(AUTH_KEY)||'null'); if(!a) return false; return (Date.now()-a.t)<30*24*60*60*1000; }catch(e){ return false; }
+}
 if(isAuthed()){ $('authModal').classList.add('hidden'); }
+
+function checkAuthReady(){
+  var ok = $('authPass').value.trim().length === 4 && $('authAge').checked;
+  $('authBtn').disabled = !ok;
+}
+$('authPass').addEventListener('input', checkAuthReady);
+$('authAge').addEventListener('change', checkAuthReady);
+
 $('authBtn').addEventListener('click', function(){
   var p = $('authPass').value.trim();
-  if(p === '0007'){
+  var a = $('authAge').checked;
+  if(p === '0007' && a){
     try{ localStorage.setItem(AUTH_KEY, JSON.stringify({t:Date.now()})); }catch(e){}
     sWin();
     $('authModal').classList.add('hidden');
@@ -946,26 +789,12 @@ $('authBtn').addEventListener('click', function(){
     $('authErr').style.display = 'block';
   }
 });
-$('authPass').addEventListener('keydown', function(e){ if(e.key === 'Enter') $('authBtn').click(); });
-
-/* ============================================================
-   AGE GATE
-============================================================ */
-function isAgeConfirmed(){ return localStorage.getItem(AGE_KEY) === 'yes'; }
-if(isAgeConfirmed()){ $('ageGate').classList.add('hidden'); }
-$('ageConfirm').addEventListener('change', function(){
-  $('ageEnterBtn').disabled = !this.checked;
-});
-$('ageEnterBtn').addEventListener('click', function(){
-  if(!$('ageConfirm').checked) return;
-  localStorage.setItem(AGE_KEY, 'yes');
-  sWin();
-  $('ageGate').classList.add('hidden');
-  initAudio();
+$('authPass').addEventListener('keydown', function(e){
+  if(e.key === 'Enter' && !$('authBtn').disabled) $('authBtn').click();
 });
 
 /* ============================================================
-   RANDOM — crypto
+   RANDOM
 ============================================================ */
 function strongRandom(max){
   if(max <= 0) return 0;
@@ -990,6 +819,12 @@ function pickRandom(arr){ return arr[strongRandom(arr.length)]; }
    PLAYERS
 ============================================================ */
 var GENDER_LABELS = { m:'⚔ ON', f:'⚘ ONA', x:'⚧ INÉ' };
+
+function escapeHtml(s){
+  return String(s||'').replace(/[&<>"']/g, function(c){
+    return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+  });
+}
 
 function renderPlayers(){
   var list = $('playersList');
@@ -1040,11 +875,6 @@ function renderPlayers(){
     });
   });
 }
-function escapeHtml(s){
-  return String(s||'').replace(/[&<>"']/g, function(c){
-    return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
-  });
-}
 
 $('addPlayerBtn').addEventListener('click', function(){
   sClick();
@@ -1054,7 +884,7 @@ $('addPlayerBtn').addEventListener('click', function(){
 });
 
 /* ============================================================
-   NAVIGÁCIA
+   NAV
 ============================================================ */
 function goScreen(name){
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
@@ -1064,18 +894,20 @@ function goScreen(name){
     b.classList.toggle('active', b.getAttribute('data-scr') === name);
   });
   $('mainScroll').scrollTop = 0;
-  // Show/hide trest button
-  if(name === 'task' || name === 'draw'){
-    $('trestBtn').classList.add('show');
-  } else {
-    $('trestBtn').classList.remove('show');
-  }
+  if(name === 'task' || name === 'draw'){ $('trestBtn').classList.add('show'); }
+  else { $('trestBtn').classList.remove('show'); }
 }
+
 document.querySelectorAll('.nav-btn').forEach(function(b){
   b.addEventListener('click', function(){
     sClick();
     var s = b.getAttribute('data-scr');
     if(s === 'settings'){ openSettings(); return; }
+    if(s === 'admin'){
+      if(isAdmin()){ openAdminPanel(); }
+      else { openAdminLogin(); }
+      return;
+    }
     goScreen(s);
   });
 });
@@ -1214,39 +1046,31 @@ $('btnNevadi').addEventListener('click', function(){
 });
 
 /* ============================================================
-   TASK BANKS
+   TASK
 ============================================================ */
 function getBank(mode, phase){
-  var bankKey = (mode === 'safe' ? 'jemne_' : 'drsne_') + phase;
-  return CUSTOM[bankKey] || [];
+  var key = (mode === 'safe' ? 'jemne_' : 'drsne_') + phase;
+  return CUSTOM[key] || [];
 }
-function bankKey(mode, phase){
-  return (mode === 'safe' ? 'jemne_' : 'drsne_') + phase;
-}
-function filterByPlayers(bank, numPlayers){
+function filterByPlayers(bank, num){
   return bank.filter(function(t){
     var mp = t.minPlayers || 2;
-    return numPlayers >= mp;
+    return num >= mp;
   });
 }
 function getTask(mode, phase){
   var bank = getBank(mode, phase);
   var filtered = filterByPlayers(bank, ST.players.length);
-  if(filtered.length === 0){
-    // Fallback na všetky
-    filtered = bank;
-  }
-  if(filtered.length === 0){
-    return null;
-  }
-  var key = bankKey(mode, phase);
+  if(filtered.length === 0) filtered = bank;
+  if(filtered.length === 0) return null;
+
+  var key = (mode === 'safe' ? 'jemne_' : 'drsne_') + phase;
   if(!ST.seen[key]) ST.seen[key] = [];
 
   if(ST.noRepeat){
     var available = [];
     for(var i = 0; i < filtered.length; i++){
-      var taskId = filtered[i].t; // unikátne podľa názvu
-      if(ST.seen[key].indexOf(taskId) === -1) available.push(i);
+      if(ST.seen[key].indexOf(filtered[i].t) === -1) available.push(i);
     }
     if(available.length === 0){
       ST.seen[key] = [];
@@ -1263,12 +1087,8 @@ function getTask(mode, phase){
 }
 
 function showTask(mode){
-  var phase = ST.phase;
-  var task = getTask(mode, phase);
-  if(!task){
-    toast('Žiadne úlohy v tejto banke!', 'red');
-    return;
-  }
+  var task = getTask(mode, ST.phase);
+  if(!task){ toast('Žiadne úlohy v tejto banke!', 'red'); return; }
   ST.currentTask = task;
 
   $('taskIcon').textContent = task.i || (mode === 'risky' ? '🔥' : '💗');
@@ -1276,23 +1096,19 @@ function showTask(mode){
   $('taskDesc').textContent = task.d;
   var who = 'PRE: ' + (ST.currentPlayer.name || '—').toUpperCase();
   who += ' · ' + (ST.currentPlayer.gender === 'm' ? '⚔ ON' : ST.currentPlayer.gender === 'f' ? '⚘ ONA' : '⚧ INÉ');
-  if(ST.players.length > 2){
-    who += ' · ' + ST.players.length + ' HRÁČI';
-  }
+  if(ST.players.length > 2) who += ' · ' + ST.players.length + ' HRÁČI';
   $('taskWho').textContent = who;
 
-  var badge = $('taskBadge');
-  var badgeText = $('taskBadgeText');
+  var badge = $('taskBadge'), badgeText = $('taskBadgeText');
   if(mode === 'risky'){
     badge.className = 'task-badge risky';
-    badgeText.textContent = phase === 'prelim' ? 'DRSNÁ · PREDOHRA' : (phase === 'extra' ? 'DRSNÁ · EXTRA' : 'DRSNÁ · NAPLNO');
+    badgeText.textContent = ST.phase === 'prelim' ? 'DRSNÁ · PREDOHRA' : (ST.phase === 'extra' ? 'DRSNÁ · EXTRA' : 'DRSNÁ · NAPLNO');
   } else {
     badge.className = 'task-badge safe';
-    badgeText.textContent = phase === 'prelim' ? 'JEMNÁ · PREDOHRA' : (phase === 'extra' ? 'JEMNÁ · EXTRA' : 'JEMNÁ · NAPLNO');
+    badgeText.textContent = ST.phase === 'prelim' ? 'JEMNÁ · PREDOHRA' : (ST.phase === 'extra' ? 'JEMNÁ · EXTRA' : 'JEMNÁ · NAPLNO');
   }
 
-  var card = $('taskCard');
-  card.className = 'task-card ' + (mode === 'risky' ? 'risky' : 'safe');
+  $('taskCard').className = 'task-card ' + (mode === 'risky' ? 'risky' : 'safe');
 
   var tagsEl = $('taskTags');
   if(task.tags && task.tags.length){
@@ -1314,7 +1130,6 @@ function showTask(mode){
         sLose();
         vibe([200,100,200]);
         toast('⏱ Čas vypršal! Trest!', 'red');
-        // auto trest
         setTimeout(function(){ openTrestModal(ST.currentPlayer); }, 800);
       }
     }, 1000);
@@ -1331,9 +1146,9 @@ function updateTimerDisplay(){
   var m = Math.floor(ST.taskTimeLeft / 60);
   var s = ST.taskTimeLeft % 60;
   $('timerVal').textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
-  if(ST.taskTimeLeft <= 10){ el.className = 'task-timer danger'; }
-  else if(ST.taskTimeLeft <= 30){ el.className = 'task-timer warning'; }
-  else { el.className = 'task-timer'; }
+  if(ST.taskTimeLeft <= 10) el.className = 'task-timer danger';
+  else if(ST.taskTimeLeft <= 30) el.className = 'task-timer warning';
+  else el.className = 'task-timer';
 }
 function stopTaskTimer(){
   if(ST.taskTimerInterval){ clearInterval(ST.taskTimerInterval); ST.taskTimerInterval = null; }
@@ -1345,21 +1160,17 @@ function stopTaskTimer(){
 $('btnDone').addEventListener('click', function(){
   sClick(); vibe([60,40,60]);
   ST.history.unshift({
-    round: ST.round,
-    player: ST.currentPlayer.name,
-    task: ST.currentTask.t,
-    mode: ST.currentMode,
-    phase: ST.phase,
-    time: new Date().toISOString()
+    round: ST.round, player: ST.currentPlayer.name,
+    task: ST.currentTask.t, mode: ST.currentMode,
+    phase: ST.phase, time: new Date().toISOString()
   });
   ST.history = ST.history.slice(0, 200);
   saveHistory();
   toast('✓ Splnené!', 'jade');
   stopTaskTimer();
   setTimeout(function(){
-    // Skontroluj bonus
     if(ST.bonusEnabled && strongRandom(100) < ST.bonusChance){
-      setTimeout(triggerBonus, 300);
+      triggerBonus();
     } else {
       goScreen('draw');
       startDraw();
@@ -1379,34 +1190,33 @@ $('btnAnother').addEventListener('click', function(){
 });
 
 /* ============================================================
-   BONUS MINI-GAME
+   BONUS
 ============================================================ */
 function triggerBonus(){
   var bank = CUSTOM.bonus || [];
-  if(!bank.length) return;
+  if(!bank.length){ goScreen('draw'); startDraw(); return; }
   var bonus = pickRandom(bank);
   ST.bonusCurrent = bonus;
   ST.bonusTimeLeft = bonus.time || 60;
 
-  // Vyber hráčov podľa typu
   var players = [];
   if(bonus.players === 'one'){
     players = [ST.players[strongRandom(ST.players.length)]];
   } else if(bonus.players === 'two'){
-    var shuffled = shuffleArr(ST.players);
-    players = shuffled.slice(0, Math.min(2, shuffled.length));
+    var sh = shuffleArr(ST.players);
+    players = sh.slice(0, Math.min(2, sh.length));
   } else if(bonus.players === 'all'){
     players = ST.players.slice();
   } else {
     players = [ST.players[strongRandom(ST.players.length)]];
   }
+  ST.bonusPlayers = players;
 
   $('bonusTitle').textContent = bonus.t;
   $('bonusDesc').textContent = bonus.d;
   $('bonusPlayers').innerHTML = players.map(function(p){
     return '<div class="bonus-player">' + escapeHtml(p.name) + '</div>';
   }).join('');
-
   updateBonusCountdown();
   $('bonusTimerFill').style.width = '100%';
   $('bonusPopup').classList.add('open');
@@ -1419,17 +1229,16 @@ function triggerBonus(){
     updateBonusCountdown();
     var pct = (ST.bonusTimeLeft / (bonus.time || 60)) * 100;
     $('bonusTimerFill').style.width = Math.max(0, pct) + '%';
-    if(ST.bonusTimeLeft <= 10){ vibe(40); }
+    if(ST.bonusTimeLeft <= 10) vibe(40);
     if(ST.bonusTimeLeft <= 0){
       clearInterval(ST.bonusInterval);
       ST.bonusInterval = null;
       sLose();
       vibe([300, 100, 300]);
-      // Trest pre všetkých zúčastnených
+      toast('💥 BONUS ZLYHAL! Trest!', 'red');
       setTimeout(function(){
         closeBonus();
-        openTrestModal(players[0]);
-        toast('💥 BONUS ZLYHAL! Trest!', 'red');
+        if(ST.bonusPlayers[0]) openTrestModal(ST.bonusPlayers[0]);
       }, 600);
     }
   }, 1000);
@@ -1446,8 +1255,7 @@ function closeBonus(){
   if(ST.bonusInterval){ clearInterval(ST.bonusInterval); ST.bonusInterval = null; }
 }
 $('bonusDoneBtn').addEventListener('click', function(){
-  sClick();
-  vibe([80, 40, 80]);
+  sClick(); vibe([80, 40, 80]);
   closeBonus();
   toast('✓ Bonus splnený!', 'jade');
   setTimeout(function(){ goScreen('draw'); startDraw(); }, 500);
@@ -1456,10 +1264,7 @@ $('bonusDoneBtn').addEventListener('click', function(){
 /* ============================================================
    TREST
 ============================================================ */
-$('trestBtn').addEventListener('click', function(){
-  sClick();
-  openTrestModal(null);
-});
+$('trestBtn').addEventListener('click', function(){ sClick(); openTrestModal(null); });
 
 function openTrestModal(preselectedPlayer){
   var sel = $('trestWho');
@@ -1474,7 +1279,7 @@ function openTrestModal(preselectedPlayer){
   var opts = $('trestOptions');
   var bank = CUSTOM.tresty || [];
   if(!bank.length){
-    opts.innerHTML = '<div style="text-align:center;color:var(--muted);padding:20px">Žiadne tresty. Admin ich môže pridať.</div>';
+    opts.innerHTML = '<div style="text-align:center;color:var(--muted);padding:20px">Žiadne tresty.</div>';
   } else {
     opts.innerHTML = '';
     bank.forEach(function(t){
@@ -1484,21 +1289,14 @@ function openTrestModal(preselectedPlayer){
       btn.style.justifyContent = 'flex-start';
       btn.innerHTML = '<span style="font-size:1.2rem">' + t.i + '</span><div style="flex:1;text-align:left"><div style="font-weight:900;color:#fff;margin-bottom:2px">' + escapeHtml(t.t) + '</div><div style="font-size:.62rem;color:var(--muted);text-transform:none;letter-spacing:0;line-height:1.4">' + escapeHtml(t.d) + '</div></div>';
       btn.addEventListener('click', function(){
-        var who = sel.options[sel.selectedIndex].textContent;
-        if(!who || sel.value === ''){
-          toast('Vyber komu', 'red');
-          return;
-        }
-        sClick();
-        vibe([100, 50, 100]);
-        toast('⚡ ' + who + ' dostal trest: ' + t.t, 'red');
+        var who = sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].textContent : '';
+        if(!who || sel.value === ''){ toast('Vyber komu', 'red'); return; }
+        sClick(); vibe([100, 50, 100]);
+        toast('⚡ ' + who + ' — ' + t.t, 'red');
         ST.history.unshift({
-          round: ST.round,
-          player: who,
-          task: '⚡ TREST: ' + t.t,
-          mode: 'trest',
-          phase: ST.phase,
-          time: new Date().toISOString()
+          round: ST.round, player: who,
+          task: '⚡ TREST: ' + t.t, mode: 'trest',
+          phase: ST.phase, time: new Date().toISOString()
         });
         ST.history = ST.history.slice(0, 200);
         saveHistory();
@@ -1524,7 +1322,6 @@ function openSettings(){
   $('swNoRepeat').classList.toggle('on', ST.noRepeat);
   $('swBonus').classList.toggle('on', ST.bonusEnabled);
   updateStatsBox();
-  updateAdminBtn();
   $('modalSettings').classList.add('open');
 }
 
@@ -1540,15 +1337,15 @@ document.querySelectorAll('.modal').forEach(function(m){
   });
 });
 
-$('setPrelim').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 0 && v <= 100){ ST.prelimRounds = v; saveSettings(); toast('Predohra: ' + v, 'jade'); } });
-$('setFull').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 0 && v <= 100){ ST.fullRounds = v; saveSettings(); toast('Naplno: ' + v, 'jade'); } });
-$('setTimer').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 0 && v <= 3600){ ST.timerSeconds = v; saveSettings(); toast('Timer: ' + (v === 0 ? 'OFF' : v + 's'), 'jade'); } });
-$('setDrawSpeed').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 30 && v <= 500){ ST.drawSpeed = v; saveSettings(); toast('Rýchlosť: ' + v + 'ms', 'jade'); } });
-$('setBonusChance').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 0 && v <= 100){ ST.bonusChance = v; saveSettings(); toast('Bonus šanca: ' + v + '%', 'jade'); } });
+$('setPrelim').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 0 && v <= 100){ ST.prelimRounds = v; saveSettings(); toast('Predohra: ' + v, 'jade'); }});
+$('setFull').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 0 && v <= 100){ ST.fullRounds = v; saveSettings(); toast('Naplno: ' + v, 'jade'); }});
+$('setTimer').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 0 && v <= 3600){ ST.timerSeconds = v; saveSettings(); toast('Timer: ' + (v === 0 ? 'OFF' : v + 's'), 'jade'); }});
+$('setDrawSpeed').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 30 && v <= 500){ ST.drawSpeed = v; saveSettings(); toast('Rýchlosť: ' + v + 'ms', 'jade'); }});
+$('setBonusChance').addEventListener('change', function(){ var v = parseInt(this.value,10); if(!isNaN(v) && v >= 0 && v <= 100){ ST.bonusChance = v; saveSettings(); toast('Bonus: ' + v + '%', 'jade'); }});
 
 $('swSound').addEventListener('click', function(){ ST.sound = !ST.sound; this.classList.toggle('on', ST.sound); saveSettings(); toast(ST.sound ? '🔊 ON' : '🔇 OFF', 'accent'); });
 $('swVibe').addEventListener('click', function(){ ST.vibe = !ST.vibe; this.classList.toggle('on', ST.vibe); saveSettings(); if(ST.vibe) vibe(30); toast(ST.vibe ? '📳 ON' : '📴 OFF', 'accent'); });
-$('swNoRepeat').addEventListener('click', function(){ ST.noRepeat = !ST.noRepeat; this.classList.toggle('on', ST.noRepeat); saveSettings(); toast(ST.noRepeat ? '🚫 Bez opakovania ON' : '♻️ Môže sa opakovať', 'accent'); });
+$('swNoRepeat').addEventListener('click', function(){ ST.noRepeat = !ST.noRepeat; this.classList.toggle('on', ST.noRepeat); saveSettings(); toast(ST.noRepeat ? '🚫 Bez opakovania' : '♻️ Môže sa opakovať', 'accent'); });
 $('swBonus').addEventListener('click', function(){ ST.bonusEnabled = !ST.bonusEnabled; this.classList.toggle('on', ST.bonusEnabled); saveSettings(); toast(ST.bonusEnabled ? '💣 Bonus ON' : '💣 Bonus OFF', 'accent'); });
 
 $('historyBtn2').addEventListener('click', function(){
@@ -1570,14 +1367,14 @@ $('resetBtn').addEventListener('click', function(){
 });
 
 function updateStatsBox(){
-  var totalBanks = 0;
+  var total = 0;
   Object.keys(CUSTOM).forEach(function(k){
-    if(k !== 'bonus' && k !== 'tresty' && Array.isArray(CUSTOM[k])) totalBanks += CUSTOM[k].length;
+    if(k !== 'bonus' && k !== 'tresty' && Array.isArray(CUSTOM[k])) total += CUSTOM[k].length;
   });
-  var totalSeen = 0;
-  Object.keys(ST.seen).forEach(function(k){ totalSeen += (ST.seen[k] || []).length; });
+  var seen = 0;
+  Object.keys(ST.seen).forEach(function(k){ seen += (ST.seen[k] || []).length; });
   $('statsBox').innerHTML =
-    'Videných úloh: <span class="num">' + totalSeen + '</span> / <span class="num2">' + totalBanks + '</span><br>' +
+    'Videných úloh: <span class="num">' + seen + '</span> / <span class="num2">' + total + '</span><br>' +
     'Kôl: <span class="num">' + ST.round + '</span> · História: <span class="num2">' + ST.history.length + '</span><br>' +
     'Hráči: <span class="num">' + ST.players.length + '</span> · Bonusov: <span class="num2">' + (CUSTOM.bonus || []).length + '</span> · Trestov: <span class="num">' + (CUSTOM.tresty || []).length + '</span>';
 }
@@ -1599,27 +1396,16 @@ function updateHistoryList(){
 ============================================================ */
 function isAdmin(){ return sessionStorage.getItem(ADMIN_KEY) === 'yes'; }
 
-function updateAdminBtn(){
-  var btn = $('adminBtn');
-  if(isAdmin()){
-    btn.classList.add('logged');
-    btn.textContent = '✓ Admin prihlásený · Otvoriť panel';
-  } else {
-    btn.classList.remove('logged');
-    btn.textContent = '🔐 Prihlásiť sa ako admin';
-  }
+function openAdminLogin(){
+  $('adminPass').value = '';
+  $('adminErr').style.display = 'none';
+  $('modalAdminLogin').classList.add('open');
 }
 
-$('adminBtn').addEventListener('click', function(){
+$('adminBtnSetup').addEventListener('click', function(){
   sClick();
-  if(isAdmin()){
-    openAdminPanel();
-  } else {
-    $('modalSettings').classList.remove('open');
-    $('adminPass').value = '';
-    $('adminErr').style.display = 'none';
-    $('modalAdminLogin').classList.add('open');
-  }
+  if(isAdmin()){ openAdminPanel(); }
+  else { openAdminLogin(); }
 });
 
 $('adminLoginBtn').addEventListener('click', function(){
@@ -1628,7 +1414,6 @@ $('adminLoginBtn').addEventListener('click', function(){
     sessionStorage.setItem(ADMIN_KEY, 'yes');
     sWin();
     $('modalAdminLogin').classList.remove('open');
-    updateAdminBtn();
     openAdminPanel();
     toast('✓ Admin prihlásený', 'jade');
   } else {
@@ -1644,12 +1429,41 @@ $('adminLogout').addEventListener('click', function(){
   sessionStorage.removeItem(ADMIN_KEY);
   sClick();
   $('modalAdminPanel').classList.remove('open');
-  updateAdminBtn();
   toast('🔒 Odhlásený', 'accent');
 });
 
+function tasksToText(bank, isBonus){
+  return bank.map(function(t){
+    if(isBonus) return [t.t, t.d, t.i, t.time, t.players].join(' | ');
+    return [t.t, t.d, t.i, t.minPlayers || 2, (t.tags || []).join(',')].join(' | ');
+  }).join('\n');
+}
+
+function tasksFromText(text, key){
+  var out = [];
+  text.split('\n').forEach(function(line){
+    line = line.trim();
+    if(!line) return;
+    var p = line.split('|').map(function(s){ return s.trim(); });
+    if(key === 'bonus'){
+      if(p.length < 4) return;
+      out.push({ t:p[0]||'Bonus', d:p[1]||'', i:p[2]||'💣', time:parseInt(p[3],10)||60, players:p[4]||'one' });
+    } else if(key === 'tresty'){
+      if(p.length < 2) return;
+      out.push({ t:p[0]||'Trest', d:p[1]||'', i:p[2]||'⚡' });
+    } else {
+      if(p.length < 3) return;
+      out.push({
+        t:p[0]||'Úloha', d:p[1]||'', i:p[2]||'🎲',
+        minPlayers:parseInt(p[3],10)||2,
+        tags:(p[4]||'').split(',').map(function(s){ return s.trim(); }).filter(Boolean)
+      });
+    }
+  });
+  return out;
+}
+
 function openAdminPanel(){
-  // Naplň textareas
   $('ta_jemne_predohra').value = tasksToText(CUSTOM.jemne_predohra);
   $('ta_jemne_naplno').value = tasksToText(CUSTOM.jemne_naplno);
   $('ta_jemne_extra').value = tasksToText(CUSTOM.jemne_extra);
@@ -1658,12 +1472,7 @@ function openAdminPanel(){
   $('ta_drsne_extra').value = tasksToText(CUSTOM.drsne_extra);
   $('ta_bonus').value = tasksToText(CUSTOM.bonus, true);
   $('ta_tresty').value = CUSTOM.tresty.map(function(t){ return [t.t, t.d, t.i].join(' | '); }).join('\n');
-
-  // Update counts
   updateAdminCounts();
-
-  // Show panel
-  $('modalSettings').classList.remove('open');
   $('modalAdminPanel').classList.add('open');
 }
 
@@ -1674,7 +1483,6 @@ function updateAdminCounts(){
   });
 }
 
-// Admin tabs
 document.querySelectorAll('.admin-tab').forEach(function(t){
   t.addEventListener('click', function(){
     sClick();
@@ -1682,17 +1490,17 @@ document.querySelectorAll('.admin-tab').forEach(function(t){
     document.querySelectorAll('.admin-tab').forEach(function(x){ x.classList.remove('active'); });
     t.classList.add('active');
     document.querySelectorAll('.admin-pane').forEach(function(p){ p.classList.remove('active'); });
-    document.getElementById(pane).classList.add('active');
+    $(pane).classList.add('active');
   });
 });
 
-// Admin save
 document.querySelectorAll('[data-save]').forEach(function(b){
   b.addEventListener('click', function(){
     var key = b.getAttribute('data-save');
     var ta = $('ta_' + key);
     if(!ta) return;
     var parsed = tasksFromText(ta.value, key);
+    if(!parsed.length){ toast('Nič na uloženie', 'red'); return; }
     CUSTOM[key] = parsed;
     saveCustom();
     sClick(); vibe(40);
@@ -1701,10 +1509,11 @@ document.querySelectorAll('[data-save]').forEach(function(b){
     updateStatsBox();
   });
 });
+
 document.querySelectorAll('[data-reset]').forEach(function(b){
   b.addEventListener('click', function(){
     var key = b.getAttribute('data-reset');
-    if(!confirm('Obnoviť pôvodné úlohy pre túto banku? Tvoje úpravy sa stratia.')) return;
+    if(!confirm('Obnoviť pôvodné pre túto banku?')) return;
     var d = getDefaults();
     CUSTOM[key] = JSON.parse(JSON.stringify(d[key]));
     saveCustom();
@@ -1735,9 +1544,7 @@ function init(){
   renderPlayers();
   $('setupPrelimCount').textContent = ST.prelimRounds;
   $('setupExtraCount').textContent = ST.fullRounds;
-  $('lbTotalTime').textContent = '00:00';
 
-  // apply settings to UI
   $('setPrelim').value = ST.prelimRounds;
   $('setFull').value = ST.fullRounds;
   $('setTimer').value = ST.timerSeconds;
@@ -1747,7 +1554,6 @@ function init(){
   $('swVibe').classList.toggle('on', ST.vibe);
   $('swNoRepeat').classList.toggle('on', ST.noRepeat);
   $('swBonus').classList.toggle('on', ST.bonusEnabled);
-  updateAdminBtn();
 }
 init();
 
